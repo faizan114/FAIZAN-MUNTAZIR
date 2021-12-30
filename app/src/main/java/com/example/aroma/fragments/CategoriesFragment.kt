@@ -1,0 +1,104 @@
+package com.example.aroma.fragments
+
+import android.content.Context
+import android.opengl.Visibility
+import android.os.Bundle
+import android.util.Log
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.LinearLayout
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.aroma.R
+import com.example.aroma.User
+import com.example.aroma.adapters.CategoriesAdapter
+import com.example.aroma.models.Category
+import com.example.aroma.presenter.IMainView
+import com.example.aroma.presenter.MainPresenter
+import com.example.aroma.view.MainActivity
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_categories.*
+import kotlinx.android.synthetic.main.toolbar.*
+
+// TODO: Rename parameter arguments, choose names that match
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
+
+/**
+ * A simple [Fragment] subclass.
+ * Use the [CategoriesFragment.newInstance] factory method to
+ * create an instance of this fragment.
+ */
+class CategoriesFragment : Fragment(),IMainView {
+        var presenter=MainPresenter(this)
+       lateinit var categoriesAdapter:CategoriesAdapter
+        lateinit var mainView :MainActivity
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_categories, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+         mainView=activity as MainActivity;
+         pb.visibility=View.VISIBLE;
+         presenter.getCategories()
+         toolbar_backIcon.visibility=View.GONE;
+         toolbar_title.text=getString(R.string.mint_varities)
+    }
+
+    override fun createUser(user: User) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onUserCreated() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onError(msg: String) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onError() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onSuccess() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onSuccess(msg: String) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onLoginSuccesful() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onCategoriesRetrieved(list: ArrayList<Category>) {
+
+        Log.d("Recieved","Categegores  " + list.size)
+      //  mainView.showSnack("GETT")
+        pb.visibility=View.GONE
+        categoriesAdapter= CategoriesAdapter(list,activity as Context, CategoriesAdapter.OnCategoryClicked { a->
+           var bundle=Bundle();
+            bundle.putString("category",a);
+            findNavController().navigate(R.id.articleFragment,bundle)
+        });
+
+        rv_cats.adapter=categoriesAdapter
+        categoriesAdapter.notifyDataSetChanged();
+        rv_cats.layoutManager=GridLayoutManager(activity,3)
+
+    }
+
+}

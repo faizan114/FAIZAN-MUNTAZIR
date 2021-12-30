@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "350191261848",
+    "project_id": "aromaiimfarmer",
+    "storage_bucket": "aromaiimfarmer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350191261848:android:00d8892bf65cb27d8098ed",
+        "android_client_info": {
+          "package_name": "com.example.aroma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350191261848-50jb47t7u0fuk4ocgl9t4ti6orhkasl8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgIu01cMK8AE9q2iD4g2UX9SMgPXzR7L4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350191261848-50jb47t7u0fuk4ocgl9t4ti6orhkasl8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
