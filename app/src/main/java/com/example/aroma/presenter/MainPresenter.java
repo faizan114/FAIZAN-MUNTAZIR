@@ -174,7 +174,7 @@ public class MainPresenter {
     public  void getArticles(String cat, ArticleFragment view)
     {
         ArrayList<Article> list=new ArrayList<>();
-        Query query =  rdb.getReference().child("articles").orderByChild("category").equalTo(cat);
+        Query query =  rdb.getReference().child("article").orderByChild("category").equalTo(cat);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(final DataSnapshot snapshot) {
