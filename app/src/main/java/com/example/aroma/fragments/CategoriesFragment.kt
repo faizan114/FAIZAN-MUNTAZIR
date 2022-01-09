@@ -23,6 +23,7 @@ import com.example.aroma.view.MainActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_categories.*
 import kotlinx.android.synthetic.main.toolbar.*
+import kotlinx.android.synthetic.main.toolbar.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -52,8 +53,24 @@ class CategoriesFragment : Fragment(),IMainView {
          mainView=activity as MainActivity;
          pb.visibility=View.VISIBLE;
          presenter.getCategories()
-         toolbar_backIcon.visibility=View.GONE;
-         toolbar_title.text=getString(R.string.mint_varities)
+        toolbar_title.text=getString(R.string.mint_varities)
+        toolbar_backIcon.setImageDrawable(activity?.getDrawable(R.drawable.icon_menu))
+        tollbar.toolbar_backIcon.setOnClickListener {
+            (activity as MainActivity).openDrawer()
+        }
+        setUpToolBar()
+    }
+
+    fun setUpToolBar()
+    {
+        searchIcon.setOnClickListener {
+            tools_layout.visibility=View.GONE;
+            searchLayout.visibility=View.VISIBLE;
+        }
+        searchCloseIcon.setOnClickListener {
+            tools_layout.visibility=View.VISIBLE;
+            searchLayout.visibility=View.GONE;
+        }
     }
 
     override fun createUser(user: User) {

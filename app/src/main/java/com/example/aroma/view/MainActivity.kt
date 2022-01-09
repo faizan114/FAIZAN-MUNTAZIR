@@ -2,9 +2,13 @@ package com.example.aroma.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.view.Gravity
+import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
+import androidx.core.view.GravityCompat
 import com.example.aroma.R
 import com.example.aroma.User
 import com.example.aroma.models.Category
@@ -15,13 +19,27 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_bottomsheet_language_changer.*
 import kotlinx.android.synthetic.main.fragment_bottomsheet_language_changer.view.*
 
-class MainActivity : AppCompatActivity(),IMainView {
+
+import com.google.android.material.navigation.NavigationView
+
+
+import androidx.drawerlayout.widget.DrawerLayout
+import java.util.*
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
+import kotlin.collections.ArrayList
+import kotlin.concurrent.timerTask
+
+
+class MainActivity : AppCompatActivity(),IMainView,NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var progressBar:ProgressBar;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        progressBar=findViewById(R.id.pb)
+        setContentView(com.example.aroma.R.layout.activity_main)
+        progressBar=findViewById(com.example.aroma.R.id.pb)
+        navView.setNavigationItemSelectedListener(this);
+
     }
 
     override fun createUser(user: User) {
@@ -59,6 +77,7 @@ class MainActivity : AppCompatActivity(),IMainView {
 
     fun openLanguageChangeSheet()
     {
+
         val dialog = BottomSheetDialog(this)
 
         // on below line we are inflating a layout file which we have created.
@@ -103,6 +122,33 @@ class MainActivity : AppCompatActivity(),IMainView {
     fun hideProgressBar()
     {
       // progressBar.visibility=View.GONE
+    }
+
+
+ public  fun   openDrawer()
+    {
+      my_drawer_layout.openDrawer(GravityCompat.START)
+
+
+    }
+
+ public   fun  closeDrawer()
+    {
+        my_drawer_layout.closeDrawer(GravityCompat.START)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        // Handle navigation view item clicks here.
+        val id = item.itemId
+        if(item.itemId==R.id.nav_change_language)
+        {
+            val timer = Timer()
+            timer.schedule(timerTask { runOnUiThread(Runnable {
+                openLanguageChangeSheet()
+            })}, 300)
+        }
+         closeDrawer()
+        return true
     }
 
 

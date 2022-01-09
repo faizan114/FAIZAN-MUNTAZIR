@@ -37,6 +37,7 @@ class ArticleFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         category=args?.category
+
     }
 
     override fun onCreateView(
@@ -53,7 +54,7 @@ class ArticleFragment : Fragment() {
      //   presenter.getCategories()
         toolbar_backIcon.visibility=View.VISIBLE;
         toolbar_title.text=category
-
+        setUpToolBar()
         toolbar_backIcon.setOnClickListener {
             (activity)?.onBackPressed()
         }
@@ -82,6 +83,18 @@ class ArticleFragment : Fragment() {
     fun onError(msg:String)
     {
         pb.visibility=View.GONE
+    }
+
+    fun setUpToolBar()
+    {
+        searchIcon.setOnClickListener {
+            tools_layout.visibility=View.GONE;
+            searchLayout.visibility=View.VISIBLE;
+        }
+        searchCloseIcon.setOnClickListener {
+            tools_layout.visibility=View.VISIBLE;
+            searchLayout.visibility=View.GONE;
+        }
     }
 
 

@@ -14,14 +14,6 @@ public class Category {
         this.priotory = priotory;
     }
 
-    public String getPriotory() {
-        return priotory;
-    }
-
-    public void setPriotory(String priotory) {
-        this.priotory = priotory;
-    }
-
     public String getName() {
         return name;
     }
@@ -38,5 +30,12 @@ public class Category {
         this.imageUrl = imageUrl;
     }
 
+    public String getPriotory() {
+        return priotory;
+    }
+
+    public void setPriotory(String priotory) {
+        this.priotory = priotory;
+    }
 }
 

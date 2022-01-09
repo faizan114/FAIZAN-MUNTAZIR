@@ -43,9 +43,10 @@
 
 
     <style name="MyEditTextTheme">
-        <item name="colorControlNormal">#FF000000</item>
-        <item name="colorControlActivated">#FF000000</item>
-        <item name="colorControlHighlight">#FF000000</item>
+        <item name="colorControlNormal">@color/blue</item>
+        <item name="colorControlActivated">@color/blue</item>
+        <item name="colorControlHighlight">@color/blue</item>
+
     </style>
 
 
