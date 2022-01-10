@@ -1,11 +1,15 @@
 package com.example.aroma.fragments
 
+import android.content.ComponentCallbacks
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.aroma.R
+import com.example.aroma.utility.SharedPrefrences
+import kotlinx.android.synthetic.main.fragment_bottomsheet_language_changer.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,17 +21,19 @@ private const val ARG_PARAM2 = "param2"
  * Use the [BottomsheetLanguageChanger.newInstance] factory method to
  * create an instance of this fragment.
  */
-class BottomsheetLanguageChanger : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class BottomsheetLanguageChanger(langChanged: LanguageChanged) : Fragment() {
+
+    var callback=langChanged;
+
+
+    interface  LanguageChanged
+    {
+      fun onlanguageChanged(lang:String);
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -49,12 +55,21 @@ class BottomsheetLanguageChanger : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            BottomsheetLanguageChanger().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance(callBack:LanguageChanged) =
+            BottomsheetLanguageChanger(callBack)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        english.setOnClickListener{
+            callback.onlanguageChanged("EN")
+
+        }
+
+        hindi.setOnClickListener {
+           callback.onlanguageChanged("HI")
+           // dismiss();
+        }
     }
 }

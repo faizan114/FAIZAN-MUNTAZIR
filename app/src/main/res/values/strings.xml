@@ -2,14 +2,12 @@
     <string name="app_name">aroma</string>
 
      <string name="mint_varities">Mint Varities</string>
-     <string name="hello_blank_fragment">Hello blank fragment</string>
      <string name="app_title">ADD APP TITLE HERE</string>
-    <string name="app_sub_title">ADD APPLICATION SUB TITLE HERE</string>
-
-    <string name="email">Email</string>
-    <string name="password">Password</string>
-    <string name="enter_email">Enter email</string>
-    <string name="enter_password">Enter Password</string>
+     <string name="app_sub_title">ADD APPLICATION SUB TITLE HERE</string>
+     <string name="email">Email</string>
+     <string name="password">Password</string>
+     <string name="enter_email">Enter email</string>
+     <string name="enter_password">Enter Password</string>
 
 
     <string name="login">Login</string>
@@ -35,8 +33,6 @@
     <string name="logout">Log out</string>
     <string name="privicy_policy">Privacy Policy</string>
     <string name="about">About</string>
-
-
     <string name="enter_anything_to_search">Enter anything to search</string>
 
 

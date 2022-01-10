@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +22,7 @@ import com.example.aroma.models.Category
 import com.example.aroma.presenter.IMainView
 import com.example.aroma.presenter.MainPresenter
 import com.example.aroma.view.MainActivity
+import com.example.aroma.view.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_categories.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -51,14 +54,32 @@ class CategoriesFragment : Fragment(),IMainView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
          mainView=activity as MainActivity;
+
          pb.visibility=View.VISIBLE;
          presenter.getCategories()
-        toolbar_title.text=getString(R.string.mint_varities)
+
         toolbar_backIcon.setImageDrawable(activity?.getDrawable(R.drawable.icon_menu))
         tollbar.toolbar_backIcon.setOnClickListener {
             (activity as MainActivity).openDrawer()
         }
+        initViews()
+        observeViewModel()
         setUpToolBar()
+    }
+
+
+    fun observeViewModel()
+    {
+//        mainViewModel?.refreshLiveDataEvent?.observe(viewLifecycleOwner, { item->
+//            Log.d("refresH","refresh")
+//            initViews()
+//
+//        })
+    }
+  fun  initViews()
+    {
+        toolbar_title.text=getString(R.string.mint_varities)
+
     }
 
     fun setUpToolBar()
