@@ -3,12 +3,16 @@ package com.example.aroma.fragments
 import android.content.Context
 import android.opengl.Visibility
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.TextSwitcher
+import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -21,6 +25,7 @@ import com.example.aroma.adapters.CategoriesAdapter
 import com.example.aroma.models.Category
 import com.example.aroma.presenter.IMainView
 import com.example.aroma.presenter.MainPresenter
+import com.example.aroma.utility.SharedPrefrences
 import com.example.aroma.view.MainActivity
 import com.example.aroma.view.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -65,6 +70,28 @@ class CategoriesFragment : Fragment(),IMainView {
         initViews()
         observeViewModel()
         setUpToolBar()
+
+        setListeners()
+    }
+
+    fun setListeners()
+    {
+
+        et_search.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(
+                s: CharSequence, start: Int,
+                count: Int, after: Int
+            ) {
+            }
+
+            override fun onTextChanged(
+                s: CharSequence, start: Int,
+                before: Int, count: Int
+            ) {
+                categoriesAdapter.filter.filter(s.toString())
+            }
+        })
     }
 
 
@@ -79,6 +106,7 @@ class CategoriesFragment : Fragment(),IMainView {
   fun  initViews()
     {
         toolbar_title.text=getString(R.string.mint_varities)
+
 
     }
 
@@ -127,11 +155,14 @@ class CategoriesFragment : Fragment(),IMainView {
         Log.d("Recieved","Categegores  " + list.size)
       //  mainView.showSnack("GETT")
         pb.visibility=View.GONE
-        categoriesAdapter= CategoriesAdapter(list,activity as Context, CategoriesAdapter.OnCategoryClicked { a->
-           var bundle=Bundle();
+        categoriesAdapter= CategoriesAdapter(list,activity as Context, CategoriesAdapter.OnCategoryClicked({a,b->
+            var bundle=Bundle();
             bundle.putString("category",a);
+            bundle.putString("categoryNameHindi",b);
             findNavController().navigate(R.id.articleFragment,bundle)
-        });
+
+        }),SharedPrefrences.getUserLanguage(activity as Context).equals("hi",true));
+
 
         rv_cats.adapter=categoriesAdapter
         categoriesAdapter.notifyDataSetChanged();

@@ -4,6 +4,15 @@ public class Category {
     public  String name;
     public  String imageUrl;
     public  String priotory;
+    public  String hindiName;
+
+    public String getHindiName() {
+        return hindiName;
+    }
+
+    public void setHindiName(String hindiName) {
+        this.hindiName = hindiName;
+    }
 
     public Category() {
     }

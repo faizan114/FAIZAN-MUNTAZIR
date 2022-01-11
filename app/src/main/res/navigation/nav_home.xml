@@ -30,6 +30,11 @@
             android:name="category"
             app:argType="string"
             android:defaultValue=""/>
+        <argument
+            android:name="categoryNameHindi"
+            app:argType="string"
+            android:defaultValue=""/>
+
     </fragment>
 
     <fragment

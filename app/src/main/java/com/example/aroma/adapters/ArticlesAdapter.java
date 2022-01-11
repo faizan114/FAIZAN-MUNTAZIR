@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,22 +19,27 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
-public class ArticlesAdapter extends   RecyclerView.Adapter<ArticlesAdapter.ViewHolder> {
+public class ArticlesAdapter extends   RecyclerView.Adapter<ArticlesAdapter.ViewHolder> implements Filterable {
     ArrayList<Article> articleList;
+    ArrayList<Article> filteredItemList;
     Context context;
    //CategoryViewInterface viewInterface;
     OnArticleClicked listener;
+    boolean isHindi;
 
   public   interface  OnArticleClicked{
 void onArticleClicked(Article article);
     }
 
 
-    public ArticlesAdapter(List<Article> categoryList, Context context, OnArticleClicked listener) {
+    public ArticlesAdapter(List<Article> categoryList, Context context, OnArticleClicked listener,boolean isHindi) {
         this.articleList =(ArrayList<Article>) categoryList;
         this.context=context;
         this.listener=listener;
+        this.filteredItemList=articleList;
+        this.isHindi=isHindi;
 
 
     }
@@ -48,8 +55,13 @@ void onArticleClicked(Article article);
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-       Article article=articleList.get(position);
-       holder.title.setText(article.getName());
+       Article article=filteredItemList.get(position);
+       if(isHindi)
+       {
+           holder.title.setText(article.getHindiName());
+       }else {
+           holder.title.setText(article.getName());
+       }
      Picasso.get().load(article.getImageUrl()).into(holder.thumbnail);
        holder.root.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +76,45 @@ void onArticleClicked(Article article);
 
     @Override
     public int getItemCount() {
-        return articleList.size();
+        return filteredItemList.size();
+    }
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+              String  searchQuery = charSequence.toString();
+                if (searchQuery.isEmpty() ) {
+                    filteredItemList = articleList;
+                } else {
+                    ArrayList<Article> filteredList = new ArrayList<>();
+
+                      for(Article article:articleList)
+                      {
+                       if(article.hindiName.toLowerCase(Locale.getDefault()).contains(searchQuery.toLowerCase(Locale.getDefault())) && isHindi)
+                       {
+                           filteredList.add(article);
+                       }
+                          if(article.getName().toLowerCase(Locale.getDefault()).contains(searchQuery.toLowerCase(Locale.getDefault())))
+                          {
+                              filteredList.add(article);
+                          }
+                      }
+
+                    filteredItemList = filteredList;
+                }
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = filteredItemList;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                filteredItemList = (ArrayList<Article>) filterResults.values;
+                notifyDataSetChanged();
+            }
+        };
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

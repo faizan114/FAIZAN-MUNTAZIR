@@ -2,6 +2,8 @@ package com.example.aroma.fragments
 
 import android.content.Context
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +15,7 @@ import com.example.aroma.R
 import com.example.aroma.adapters.ArticlesAdapter
 import com.example.aroma.models.Article
 import com.example.aroma.presenter.MainPresenter
+import com.example.aroma.utility.SharedPrefrences
 import kotlinx.android.synthetic.main.fragment_article.*
 import kotlinx.android.synthetic.main.fragment_categories.*
 import kotlinx.android.synthetic.main.fragment_categories.pb
@@ -32,11 +35,13 @@ class ArticleFragment : Fragment() {
     var presenter= MainPresenter()
     val args: ArticleFragmentArgs by navArgs()
     var category:String?=null;
+    var hindiCatnAMe:String?=null;
 
     lateinit var articleAdapter:ArticlesAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         category=args?.category
+        hindiCatnAMe=args?.categoryNameHindi
 
     }
 
@@ -53,13 +58,35 @@ class ArticleFragment : Fragment() {
         pb.visibility=View.VISIBLE;
      //   presenter.getCategories()
         toolbar_backIcon.visibility=View.VISIBLE;
+        if(SharedPrefrences.getUserLanguage(activity as Context).equals("hi",true))
+        {
+            toolbar_title.text=hindiCatnAMe
+        }else
         toolbar_title.text=category
+
         setUpToolBar()
         toolbar_backIcon.setOnClickListener {
             (activity)?.onBackPressed()
         }
 
         presenter.getArticles(category,this)
+
+        et_search.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(
+                s: CharSequence, start: Int,
+                count: Int, after: Int
+            ) {
+            }
+
+            override fun onTextChanged(
+                s: CharSequence, start: Int,
+                before: Int, count: Int
+            ) {
+
+                articleAdapter.filter.filter(s.toString())
+            }
+        })
 
     }
 
@@ -72,7 +99,7 @@ class ArticleFragment : Fragment() {
 
 
 
-      })
+      },SharedPrefrences.getUserLanguage(activity as Context).equals("hi",true))
 
         rv_articles.adapter=articleAdapter
         rv_articles.layoutManager=LinearLayoutManager(activity);

@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">aroma</string>
+    <string name="app_name">अरोमा मिशन</string>
     <string name="mint_varities">पुदीने की किस्में</string>
-    <string name="app_title">PASTE ITS HINID NAME HERE</string>
-    <string name="app_sub_title">ADD APPLICATION SUB TITLE HERE</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
-    <string name="enter_email">Enter email</string>
-    <string name="enter_password">Enter Password</string>
+    <string name="app_title">इसका हिंदी नाम यहां पेस्ट करें</string>
+    <string name="app_sub_title">आवेदन उपशीर्षक यहां जोड़ें</string>
+    <string name="email">ईमेल</string>
+    <string name="password">कुंजिका</string>
+    <string name="enter_email">ईमेल दर्ज करें</string>
+    <string name="enter_password">पास वर्ड दर्ज करें</string>
 
 
-    <string name="login">Login</string>
-    <string name="forgot_password">Forgot Password ?</string>
-    <string name="forgot_password_2">Forgot Password </string>
-    <string name="signup">Sign up</string>
+    <string name="login">लॉग इन करें</string>
+    <string name="forgot_password">पासवर्ड भूल गए ??</string>
+    <string name="forgot_password_2">पासवर्ड भूल गए </string>
+    <string name="signup">साइन अप करें</string>
 
-    <string name="name">Name</string>
-    <string name="enter_name">Enter name</string>
-    <string name="phone_number">Phone Number</string>
-    <string name="enter_phone_number">Enter phone number</string>
-    <string name="alreday">Already have an account? Login</string>
-    <string name="submit">Submit</string>
+    <string name="name">नाम</string>
+    <string name="enter_name">नाम दर्ज करें</string>
+    <string name="phone_number">फ़ोन नंबर</string>
+    <string name="enter_phone_number">फोन नंबर दर्ज</string>
+    <string name="alreday">क्या आपके पास पहले से एक खाता मौजूद है? लॉग इन करें</string>
+    <string name="submit">प्रस्तुत करना</string>
 
-    <string name="changelaguage">Change Language</string>
+    <string name="changelaguage">भाषा बदलो</string>
 
-    <string name="choose_laguage">Choose Language</string>
+    <string name="choose_laguage">भाषा चुनें</string>
     <string name="english">English</string>
-    <string name="hindi">Hindi</string>
+    <string name="hindi">हिन्दी</string>
 
 
     <!--    MENU-->
-    <string name="logout">Log out</string>
-    <string name="privicy_policy">Privacy Policy</string>
-    <string name="about">About</string>
-    <string name="enter_anything_to_search">Enter anything to search</string>
+    <string name="logout">लॉग आउट</string>
+    <string name="privicy_policy">गोपनीयता नीति</string>
+    <string name="about">के बारे में</string>
+    <string name="enter_anything_to_search">खोजने के लिए कुछ भी दर्ज करें</string>
 </resources>

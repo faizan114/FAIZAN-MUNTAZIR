@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity(),IMainView,NavigationView.OnNavigationIt
       view.english.setOnClickListener{
           SharedPrefrences.storeUserLanguage("EN",this as Context)
           updateResourcesLocale(this,Locale("EN"))
-        refreshCurrentFragment()
+           refreshCurrentFragment()
           dialog.dismiss()
         }
 
