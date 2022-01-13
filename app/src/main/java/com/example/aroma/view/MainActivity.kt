@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity(),IMainView,NavigationView.OnNavigationIt
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.example.aroma.R.layout.activity_main)
-        progressBar=findViewById(com.example.aroma.R.id.pb)
+//        progressBar=findViewById(com.example.aroma.R.id.pb)
         navView.setNavigationItemSelectedListener(this);
 
     }

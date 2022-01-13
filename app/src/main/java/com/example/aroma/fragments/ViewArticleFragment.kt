@@ -1,11 +1,17 @@
 package com.example.aroma.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import com.example.aroma.R
+import com.example.aroma.utility.SharedPrefrences
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.fragment_view_article.*
+import kotlinx.android.synthetic.main.toolbar.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,16 +24,11 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class ViewArticleFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    val args: ViewArticleFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -37,6 +38,29 @@ class ViewArticleFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_view_article, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Picasso.get().load(args.articleImage).into(article_image);
+
+        if(SharedPrefrences.getUserLanguage(activity as Context).equals("hi",true))
+        {
+            toolbar_view_article.searchIcon.visibility=View.GONE;
+            toolbar_view_article.toolbar_title.text=args.articleTitleHindi
+            article_text.text=args.articleDesHindi;
+
+        }
+         else
+         {
+             toolbar_view_article.toolbar_title.text=args.articleTitleEnglish
+            article_text.text=args.articleDesEnglish;
+
+           }
+
+        toolbar_view_article.toolbar_backIcon.setOnClickListener { (activity)?.onBackPressed() }
+
+    }
+
 
     companion object {
         /**

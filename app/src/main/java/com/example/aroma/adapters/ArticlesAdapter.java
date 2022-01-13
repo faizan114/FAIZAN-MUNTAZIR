@@ -26,15 +26,15 @@ public class ArticlesAdapter extends   RecyclerView.Adapter<ArticlesAdapter.View
     ArrayList<Article> filteredItemList;
     Context context;
    //CategoryViewInterface viewInterface;
-    OnArticleClicked listener;
+    IArticle listener;
     boolean isHindi;
 
-  public   interface  OnArticleClicked{
-void onArticleClicked(Article article);
+  public   interface  IArticle{
+         void onArticleClicked(Article article);
     }
 
 
-    public ArticlesAdapter(List<Article> categoryList, Context context, OnArticleClicked listener,boolean isHindi) {
+    public ArticlesAdapter(List<Article> categoryList, Context context,IArticle listener,boolean isHindi) {
         this.articleList =(ArrayList<Article>) categoryList;
         this.context=context;
         this.listener=listener;
@@ -66,8 +66,7 @@ void onArticleClicked(Article article);
        holder.root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              // viewInterface.oNoteClick(noteList.get(position));
-               // listener.onCategoryClicked(categor.name);
+                 listener.onArticleClicked(article);
             }
         });
 

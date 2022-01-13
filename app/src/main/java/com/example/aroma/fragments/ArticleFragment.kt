@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.aroma.R
@@ -94,9 +95,16 @@ class ArticleFragment : Fragment() {
     {
       pb.visibility=View.GONE
       Log.d("ARTICLE",""+articles.size)
-      this.articleAdapter= ArticlesAdapter(articles,activity as Context,ArticlesAdapter.OnArticleClicked { article ->
+      this.articleAdapter= ArticlesAdapter(articles,activity as Context,ArticlesAdapter.IArticle { article ->
 
-
+          var bundle=Bundle();
+          bundle.putString("articleTitleEnglish",article.name);
+          bundle.putString("articleTitleHindi",article.hindiName);
+      //    Log.d("ART","ART:->"+article.hindiDescription)
+          bundle.putString("articleDesHindi",article.hindiDescription);
+          bundle.putString("articleDesEnglish",article.description);
+          bundle.putString("articleImage",article.imageUrl)
+          findNavController().navigate(R.id.viewArticleFragment,bundle)
 
 
       },SharedPrefrences.getUserLanguage(activity as Context).equals("hi",true))

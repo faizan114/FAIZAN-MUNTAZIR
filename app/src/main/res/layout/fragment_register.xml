@@ -15,6 +15,13 @@
         android:layout_marginBottom="100dp"
         android:padding="10dp"
         >
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/logo"
+                android:layout_gravity="center_horizontal"
+                ></ImageView>
 
 <!--        NAME-->
         <TextView
@@ -23,7 +30,7 @@
             android:text="@string/name"
             android:textSize="18sp"
             android:textColor="@color/black"
-
+           android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_light" />
 
         <EditText
@@ -110,7 +117,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/bg_button"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
 
             />
 

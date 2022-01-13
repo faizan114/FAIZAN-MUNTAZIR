@@ -3,12 +3,20 @@ package com.example.aroma.models;
 public class Article {
     String name;
     String imageUrl;
-    int priotory;
+   // int priotory;
     String category;
     public  String hindiName;
-    public  String hindiDescription;
+    public  String hindiDesciption;
+    public  String description;
 
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -18,9 +26,7 @@ public class Article {
         this.imageUrl = imageUrl;
     }
 
-    public void setPriotory(int priotory) {
-        this.priotory = priotory;
-    }
+
 
     public void setCategory(String category) {
         this.category = category;
@@ -35,20 +41,20 @@ public class Article {
     }
 
     public String getHindiDescription() {
-        return hindiDescription;
+        return hindiDesciption;
     }
 
     public void setHindiDescription(String hindiDescription) {
-        this.hindiDescription = hindiDescription;
+        this.hindiDesciption = hindiDescription;
     }
 
     public Article(String name, String imageUrl, int priotory, String category, String hindiName, String hindiDescription) {
         this.name = name;
         this.imageUrl = imageUrl;
-        this.priotory = priotory;
+
         this.category = category;
         this.hindiName = hindiName;
-        this.hindiDescription = hindiDescription;
+        this.hindiDesciption = hindiDescription;
     }
 
     public Article() {
@@ -62,9 +68,6 @@ public class Article {
         return imageUrl;
     }
 
-    public int getPriotory() {
-        return priotory;
-    }
 
     public String getCategory() {
         return category;

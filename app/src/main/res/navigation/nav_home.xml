@@ -41,7 +41,32 @@
         android:id="@+id/viewArticleFragment"
         android:name="com.example.aroma.fragments.ViewArticleFragment"
         android:label="fragment_view_article"
-        tools:layout="@layout/fragment_view_article" />
+        tools:layout="@layout/fragment_view_article">
+        <argument
+            android:name="articleTitleEnglish"
+            app:argType="string"
+            android:defaultValue="article"/>
+
+        <argument
+            android:name="articleTitleHindi"
+            app:argType="string"
+            android:defaultValue="article"/>
+
+        <argument
+            android:name="articleDesHindi"
+            app:argType="string"
+            android:defaultValue="none"/>
+
+        <argument
+            android:name="articleDesEnglish"
+            app:argType="string"
+            android:defaultValue="none"/>
+
+        <argument
+            android:name="articleImage"
+            app:argType="string"
+            android:defaultValue="hsh"/>
+    </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
         android:name="com.example.aroma.fragments.ForgotPassword"
