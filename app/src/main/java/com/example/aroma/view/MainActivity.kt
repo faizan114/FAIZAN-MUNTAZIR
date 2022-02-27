@@ -38,8 +38,10 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Resources
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.aroma.fragments.FarmerRegistration
 
 
 class MainActivity : AppCompatActivity(),IMainView,NavigationView.OnNavigationItemSelectedListener {
@@ -162,6 +164,7 @@ class MainActivity : AppCompatActivity(),IMainView,NavigationView.OnNavigationIt
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
+        closeDrawer()
         val id = item.itemId
         if(item.itemId==R.id.nav_change_language)
         {
@@ -170,8 +173,25 @@ class MainActivity : AppCompatActivity(),IMainView,NavigationView.OnNavigationIt
                 openLanguageChangeSheet()
             })}, 300)
         }
-         closeDrawer()
+
+
+        if(item.itemId==R.id.nav_registra)
+        {
+            //  Navigation.findNavController(this,R.id.navHostFragment)
+             var nav=navHostFragment.findNavController();
+            val timer = Timer()
+            timer.schedule(timerTask { runOnUiThread(Runnable {
+               nav.navigate(R.id.farmerRegistration);
+            })}, 100)
+        }
+
         return true
+    }
+
+    fun openReg()
+    {
+       // this.findNavController().navigate()
+
     }
 
 //LANGAUE CHANGE

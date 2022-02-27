@@ -3,12 +3,18 @@ package com.example.aroma.models;
 public class Article {
     String name;
     String imageUrl;
-   // int priotory;
+      int priotory;
     String category;
-    public  String hindiName;
-    public  String hindiDesciption;
-    public  String description;
+    String hindiDesciption;
+    String description;
 
+    public String getHindiDesciption() {
+        return hindiDesciption;
+    }
+
+    public void setHindiDesciption(String hindiDesciption) {
+        this.hindiDesciption = hindiDesciption;
+    }
 
     public String getDescription() {
         return description;
@@ -18,43 +24,11 @@ public class Article {
         this.description = description;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getHindiName() {
-        return hindiName;
-    }
-
-    public void setHindiName(String hindiName) {
-        this.hindiName = hindiName;
-    }
-
-    public String getHindiDescription() {
-        return hindiDesciption;
-    }
-
-    public void setHindiDescription(String hindiDescription) {
-        this.hindiDesciption = hindiDescription;
-    }
-
-    public Article(String name, String imageUrl, int priotory, String category, String hindiName, String hindiDescription) {
+    public Article(String name, String imageUrl, int priotory, String category) {
         this.name = name;
         this.imageUrl = imageUrl;
-
+        this.priotory = priotory;
         this.category = category;
-        this.hindiName = hindiName;
-        this.hindiDesciption = hindiDescription;
     }
 
     public Article() {
@@ -68,6 +42,9 @@ public class Article {
         return imageUrl;
     }
 
+    public int getPriotory() {
+        return priotory;
+    }
 
     public String getCategory() {
         return category;

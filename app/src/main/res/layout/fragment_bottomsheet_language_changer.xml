@@ -54,6 +54,7 @@
             android:layout_height="wrap_content"
             android:text="@string/english"
             android:layout_weight="1"
+            android:textColor="@color/white"
             android:textAllCaps="false"
             android:layout_margin="6dp"
             android:background="@drawable/bg_button"
@@ -66,6 +67,7 @@
             android:text="@string/hindi"
             android:layout_weight="1"
             android:textAllCaps="false"
+            android:textColor="@color/white"
             android:layout_margin="6dp"
             android:background="@drawable/bg_button"
             />

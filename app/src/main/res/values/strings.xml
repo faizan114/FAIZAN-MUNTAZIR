@@ -32,8 +32,123 @@
 <!--    MENU-->
     <string name="logout">Log out</string>
     <string name="privicy_policy">Privacy Policy</string>
+    <string name="farmer_registration">Farmer Registration</string>
     <string name="about">About</string>
     <string name="enter_anything_to_search">Enter anything to search</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+
+
+
+
+
+<!--    FORM-->
+
+
+
+    <string name="rural_dev">Rural Development</string>
+    <string name="name_">Name: </string>
+    <string name="f_name">Fathers Name: </string>
+    <string name="phone">Phone: </string>
+    <string name="email_">Email: </string>
+    <string name="aadhaar">Aadhaar/Voter ID Number: </string>
+    <string name="gender">Gender: </string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="age">Age:</string>
+    <string name="years">Years:</string>
+    <string name="caste">Caste:</string>
+    <string name="general">General</string>
+    <string name="obc">OBC</string>
+    <string name="schedule_caste">ST</string>
+    <string name="other">Other</string>
+    <string name="marital_status">Marital Status:</string>
+    <string name="married">Married</string>
+    <string name="unmarried">Unmarried</string>
+    <string name="family_count">No. of family members :</string>
+    <string name="c_address">Present Address :</string>
+    <string name="village_town">Town/Village:</string>
+    <string name="post">Post:</string>
+    <string name="distt">District:</string>
+    <string name="state">State:</string>
+    <string name="electricity_avl">Electricity Available: </string>
+    <string name="yes">Yes</string>
+    <string name="no">NO</string>
+    <string name="farm_machinery">Farm machinery :</string>
+    <string name="tractor">Tractor</string>
+    <string name="harvester">Harvester</string>
+    <string name="rotavator">Rotavator</string>
+    <string name="tubewell">Tubewell</string>
+    <string name="none">None</string>
+    <string name="t_land_area">Total Land Area (Hectare):</string>
+    <string name="t_annual_income">Total Annual Income(Agriculture ):</string>
+    <string name="annual_income_a_c">Annual Income (Aromatic Crops):</string>
+    <string name="field_cond">Field Condition :</string>
+    <string name="irrigated">Irrigated</string>
+    <string name="n_irr">Non irrigated/ Rainfed</string>
+    <string name="wasteland">WasteLand</string>
+    <string name="drought_aff">Drought Affected</string>
+    <string name="waterlogged">WaterLogged</string>
+    <string name="irr_facility">Irrigation Facility :</string>
+    <string name="pond">Pond</string>
+    <string name="canal">Canal</string>
+    <string name="well">Well</string>
+    <string name="rainfed">Rainfed</string>
+    <string name="aroma_mission">Do you want to Cultivate aromatic crops? under "Aroma Mission" If Yes, then mention?</string>
+    <string name="lavender">Lavender</string>
+    <string name="lemongrass">Lemongrass</string>
+    <string name="ocimum">Ocimum</string>
+    <string name="rosegrass">Rosagrass</string>
+    <string name="rosemary">Rosemary</string>
+    <string name="mentha">Mentha</string>
+    <string name="salvia_sclarec">Salvia Sclarec</string>
+    <string name="garanium">Garanium</string>
+    <string name="jammu_monarda">Jammu Monarda</string>
+    <string name="aromatic_crops">Are you  Cultivating aromatic crops? If Yes, then mention?</string>
+    <string name="h_l_i_map_cul">How long have you been involved in MAPs Cultivation :</string>
+    <string name="dur_years">(Duration in Years)</string>
+    <string name="cal_max_profit">Aromatic crops Cultivated by farmers that have provided maximum profit:</string>
+    <string name="agro_advisory">Do you want  Agro-Advisory services from CSIR-IIIM :</string>
+    <string name="beneficiary_csir">Beneficiary of CSIR-IIIM through</string>
+    <string name="planting_material">Planting material</string>
+    <string name="tranning_prog">tranning Program</string>
+    <string name="kissan_mela">IIIM Kisan Mela</string>
+    <string name="dist_unit">Distillation Unit</string>
+    <string name="herbal_product">Herbal Product</string>
+    <string name="advisory_services">Advisory Services</string>
+    <string name="field_demostration">Field Demostration</string>
+    <string name="sell_oils">Do you want to sell essential oils through CSIR-IIIM?</string>
+    <string name="p_m_name_quantity">Planting material (Name and Quantity)</string>
+    <string name="requirement">Requirement</string>
+    <string name="slips">Slips</string>
+    <string name="kgs">Kgs</string>
+    <string name="received">Received</string>
+    <string name="acknowledgement">I want to cultivate aromatic plants voluntarily under aroma mission and I will not involve this project of any other istitution.</string>
+    <string name="undertaking">Undertaking: I hereby abide that condition that 1/4th  area of my crop raised from my planting materials provided by CSIR-IIIM would be given back to the institution in the following years for distribution amongst other farmars.</string>
+
+
+    <string-array name="Category">
+        <item>Category</item>
+        <item>General</item>
+        <item>OBC</item>
+        <item>ST</item>
+        <item>SC</item>
+    </string-array>
+    <string-array name="Education">
+        <item>Education</item>
+        <item>Illiterate</item>
+        <item>Primary</item>
+        <item>High School</item>
+        <item>Graduation</item>
+        <item> Post Graduation</item>
+    </string-array>
+    <string-array name="Occupation">
+        <item>Occupation</item>
+        <item>Agriculture</item>
+        <item>Service</item>
+        <item>Business</item>
+        <item>Other</item>
+    </string-array>
 
 </resources>

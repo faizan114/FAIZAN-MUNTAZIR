@@ -8,6 +8,10 @@
 
 
     <item
+        android:id="@+id/nav_registra"
+        android:title="@string/farmer_registration" />
+
+    <item
         android:id="@+id/nav_policy"
         android:title="@string/privicy_policy" />
 

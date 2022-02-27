@@ -1,17 +1,21 @@
 package com.example.aroma.fragments
 
-import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.example.aroma.R
-import com.example.aroma.utility.SharedPrefrences
-import com.squareup.picasso.Picasso
+import com.example.aroma.models.Article
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_view_article.*
-import kotlinx.android.synthetic.main.toolbar.view.*
+import kotlinx.android.synthetic.main.toolbar.*
+import android.webkit.WebViewClient
+
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,10 +29,12 @@ private const val ARG_PARAM2 = "param2"
  */
 class ViewArticleFragment : Fragment() {
     val args: ViewArticleFragmentArgs by navArgs()
+     var articleString:String="";
+     val gson=com.google.gson.Gson();
+    var article: Article? =null;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -39,46 +45,37 @@ class ViewArticleFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_view_article, container, false)
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Picasso.get().load(args.articleImage).into(article_image);
-
-        if(SharedPrefrences.getUserLanguage(activity as Context).equals("hi",true))
+        articleString=args.article;
+        if(articleString!=null)
         {
-            toolbar_view_article.searchIcon.visibility=View.GONE;
-            toolbar_view_article.toolbar_title.text=args.articleTitleHindi
-            article_text.text=args.articleDesHindi;
-
+            article=gson.fromJson(articleString,Article::class.java);
         }
-         else
-         {
-             toolbar_view_article.toolbar_title.text=args.articleTitleEnglish
-            article_text.text=args.articleDesEnglish;
 
-           }
 
-        toolbar_view_article.toolbar_backIcon.setOnClickListener { (activity)?.onBackPressed() }
+        toolbar_title.text=article?.name
+        if(article?.hindiDesciption?.toString()?.lowercase()?.contains("appvideo1231",true) == true  || article?.description?.toString()?.lowercase()?.contains("appvideo1231",true) == true  )
 
+        {
+            articleImage.visibility=View.GONE
+        }
+
+
+// this will enable the javascript.
+        // this will enable the javascript.
+        webview.getSettings().setJavaScriptEnabled(true)
+
+        // WebViewClient allows you to handle
+        // onPageFinished and override Url loading.
+
+        // WebViewClient allows you to handle
+        // onPageFinished and override Url loading.
+        webview.setWebViewClient(WebViewClient())
+        Log.d("AR: ",":ARTICLE  "+article?.hindiDesciption)
+        article?.hindiDesciption?.let { webview.loadData(it,"text/html", "UTF-8") };
     }
 
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ViewArticleFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ViewArticleFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

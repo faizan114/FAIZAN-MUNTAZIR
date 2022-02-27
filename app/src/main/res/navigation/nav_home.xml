@@ -30,11 +30,6 @@
             android:name="category"
             app:argType="string"
             android:defaultValue=""/>
-        <argument
-            android:name="categoryNameHindi"
-            app:argType="string"
-            android:defaultValue=""/>
-
     </fragment>
 
     <fragment
@@ -43,33 +38,17 @@
         android:label="fragment_view_article"
         tools:layout="@layout/fragment_view_article">
         <argument
-            android:name="articleTitleEnglish"
+            android:name="article"
             app:argType="string"
-            android:defaultValue="article"/>
-
-        <argument
-            android:name="articleTitleHindi"
-            app:argType="string"
-            android:defaultValue="article"/>
-
-        <argument
-            android:name="articleDesHindi"
-            app:argType="string"
-            android:defaultValue="none"/>
-
-        <argument
-            android:name="articleDesEnglish"
-            app:argType="string"
-            android:defaultValue="none"/>
-
-        <argument
-            android:name="articleImage"
-            app:argType="string"
-            android:defaultValue="hsh"/>
+            android:defaultValue=""/>
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
         android:name="com.example.aroma.fragments.ForgotPassword"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" />
+    <fragment
+        android:id="@+id/farmerRegistration"
+        android:name="com.example.aroma.fragments.FarmerRegistration"
+        android:label="FarmerRegistration" />
 </navigation>

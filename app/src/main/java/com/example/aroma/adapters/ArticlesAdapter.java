@@ -4,8 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,27 +17,22 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
-public class ArticlesAdapter extends   RecyclerView.Adapter<ArticlesAdapter.ViewHolder> implements Filterable {
+public class ArticlesAdapter extends   RecyclerView.Adapter<ArticlesAdapter.ViewHolder> {
     ArrayList<Article> articleList;
-    ArrayList<Article> filteredItemList;
     Context context;
    //CategoryViewInterface viewInterface;
-    IArticle listener;
-    boolean isHindi;
+    OnArticleClicked listener;
 
-  public   interface  IArticle{
-         void onArticleClicked(Article article);
+  public   interface  OnArticleClicked{
+void onArticleClicked(Article article);
     }
 
 
-    public ArticlesAdapter(List<Article> categoryList, Context context,IArticle listener,boolean isHindi) {
+    public ArticlesAdapter(List<Article> categoryList, Context context, OnArticleClicked listener) {
         this.articleList =(ArrayList<Article>) categoryList;
         this.context=context;
         this.listener=listener;
-        this.filteredItemList=articleList;
-        this.isHindi=isHindi;
 
 
     }
@@ -55,18 +48,13 @@ public class ArticlesAdapter extends   RecyclerView.Adapter<ArticlesAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-       Article article=filteredItemList.get(position);
-       if(isHindi)
-       {
-           holder.title.setText(article.getHindiName());
-       }else {
-           holder.title.setText(article.getName());
-       }
+       Article article=articleList.get(position);
+       holder.title.setText(article.getName());
      Picasso.get().load(article.getImageUrl()).into(holder.thumbnail);
        holder.root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                 listener.onArticleClicked(article);
+              listener.onArticleClicked(article);
             }
         });
 
@@ -75,45 +63,7 @@ public class ArticlesAdapter extends   RecyclerView.Adapter<ArticlesAdapter.View
 
     @Override
     public int getItemCount() {
-        return filteredItemList.size();
-    }
-    @Override
-    public Filter getFilter() {
-        return new Filter() {
-            @Override
-            protected FilterResults performFiltering(CharSequence charSequence) {
-              String  searchQuery = charSequence.toString();
-                if (searchQuery.isEmpty() ) {
-                    filteredItemList = articleList;
-                } else {
-                    ArrayList<Article> filteredList = new ArrayList<>();
-
-                      for(Article article:articleList)
-                      {
-                       if(article.hindiName.toLowerCase(Locale.getDefault()).contains(searchQuery.toLowerCase(Locale.getDefault())) && isHindi)
-                       {
-                           filteredList.add(article);
-                       }
-                          if(article.getName().toLowerCase(Locale.getDefault()).contains(searchQuery.toLowerCase(Locale.getDefault())))
-                          {
-                              filteredList.add(article);
-                          }
-                      }
-
-                    filteredItemList = filteredList;
-                }
-
-                FilterResults filterResults = new FilterResults();
-                filterResults.values = filteredItemList;
-                return filterResults;
-            }
-
-            @Override
-            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                filteredItemList = (ArrayList<Article>) filterResults.values;
-                notifyDataSetChanged();
-            }
-        };
+        return articleList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
