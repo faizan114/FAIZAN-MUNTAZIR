@@ -48,11 +48,11 @@
     <string name="f_name">Fathers Name: </string>
     <string name="phone">Phone: </string>
     <string name="email_">Email: </string>
-    <string name="aadhaar">Aadhaar/Voter ID Number: </string>
+    <string name="aadhar">Aadhaar/Voter ID Number: </string>
     <string name="gender">Gender: </string>
     <string name="male">Male</string>
     <string name="female">Female</string>
-    <string name="age">Age:</string>
+    <string name="dob">Age:</string>
     <string name="years">Years:</string>
     <string name="caste">Caste:</string>
     <string name="general">General</string>

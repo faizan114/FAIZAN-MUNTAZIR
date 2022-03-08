@@ -4,7 +4,7 @@
     android:id="@+id/catRoot"
     android:layout_width="120dp"
     android:layout_height="120dp"
-    android:layout_margin="8dp"
+    android:layout_margin="10dp"
     android:orientation="vertical"
     android:elevation="0.5dp"
     android:background="@color/white"

@@ -7,6 +7,7 @@ import com.example.aroma.User;
 import com.example.aroma.fragments.ArticleFragment;
 import com.example.aroma.models.Article;
 import com.example.aroma.models.Category;
+import com.example.aroma.models.FarmerRegistrationForm;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -195,6 +196,12 @@ public class MainPresenter {
             }
         });
 
+    }
+
+
+    public  void registerFarmer(FarmerRegistrationForm farmerRegistrationForm)
+    {
+        rdb.getReference().child("farmerforms").child(farmerRegistrationForm.getAadhadNo()).setValue(farmerRegistrationForm);
     }
 
 

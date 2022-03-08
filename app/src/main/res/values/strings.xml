@@ -1,20 +1,20 @@
 <resources>
     <string name="app_name">aroma</string>
 
-     <string name="mint_varities">Mint Varities</string>
-     <string name="app_title">ADD APP TITLE HERE</string>
-     <string name="app_sub_title">ADD APPLICATION SUB TITLE HERE</string>
-     <string name="email">Email</string>
-     <string name="password">Password</string>
-     <string name="enter_email">Enter email</string>
-     <string name="enter_password">Enter Password</string>
+    <string name="mint_varities">Mint Varities</string>
+    <string name="app_title">ADD APP TITLE HERE</string>
+    <string name="app_sub_title">ADD APPLICATION SUB TITLE HERE</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="enter_email">Enter email</string>
+    <string name="enter_password">Enter Password</string>
 
 
     <string name="login">Login</string>
     <string name="forgot_password">Forgot Password ?</string>
     <string name="forgot_password_2">Forgot Password </string>
     <string name="signup">Sign up</string>
-    
+
     <string name="name">Name</string>
     <string name="enter_name">Enter name</string>
     <string name="phone_number">Phone Number</string>
@@ -27,24 +27,19 @@
     <string name="choose_laguage">Choose Language</string>
     <string name="english">English</string>
     <string name="hindi">Hindi</string>
-    
-    
-<!--    MENU-->
+
+
+    <!--    MENU-->
     <string name="logout">Log out</string>
     <string name="privicy_policy">Privacy Policy</string>
     <string name="farmer_registration">Farmer Registration</string>
     <string name="about">About</string>
     <string name="enter_anything_to_search">Enter anything to search</string>
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-
-
-
-
-<!--    FORM-->
-
+    <!--    FORM-->
 
 
     <string name="rural_dev">Rural Development</string>
@@ -52,11 +47,11 @@
     <string name="f_name">Fathers Name: </string>
     <string name="phone">Phone: </string>
     <string name="email_">Email: </string>
-    <string name="aadhaar">Aadhaar/Voter ID Number: </string>
+    <string name="aadhar">Aadhar/Voter ID Number: </string>
     <string name="gender">Gender: </string>
     <string name="male">Male</string>
     <string name="female">Female</string>
-    <string name="age">Age:</string>
+    <string name="dob"> Date of Birth</string>
     <string name="years">Years:</string>
     <string name="caste">Caste:</string>
     <string name="general">General</string>
@@ -121,22 +116,32 @@
     <string name="sell_oils">Do you want to sell essential oils through CSIR-IIIM?</string>
     <string name="p_m_name_quantity">Planting material (Name and Quantity)</string>
     <string name="requirement">Requirement</string>
-    <string name="slips">Slips</string>
-    <string name="kgs">Kgs</string>
+    <string name="slips">(Slips)</string>
+    <string name="kgs">(Kgs)</string>
     <string name="received">Received</string>
     <string name="acknowledgement">I want to cultivate aromatic plants voluntarily under aroma mission and I will not involve this project of any other istitution.</string>
     <string name="undertaking">Undertaking: I hereby abide that condition that 1/4th  area of my crop raised from my planting materials provided by CSIR-IIIM would be given back to the institution in the following years for distribution amongst other farmars.</string>
+    <string name="reg_submit_form">SUBMIT</string>
+
+    //  hint Strings
+    <string name="hintName">Enter Your Name </string>
+    <string name="hintFName">Enter your fathers name </string>
+    <string name="hintPhone">enter Phone</string>
+    <string name="hintEmail">Enter your email </string>
+    <string name="hintAadhar">Enter AADHAR number </string>
+    <string name="hintDOB">dd/mm/yyyy </string>
+    <string name="hintAddress">Enter Your Address</string>
 
 
     <string-array name="Category">
-        <item>Category</item>
+        <item>--Category--</item>
         <item>General</item>
         <item>OBC</item>
         <item>ST</item>
         <item>SC</item>
     </string-array>
     <string-array name="Education">
-        <item>Education</item>
+        <item>--Education--</item>
         <item>Illiterate</item>
         <item>Primary</item>
         <item>High School</item>
@@ -144,11 +149,50 @@
         <item> Post Graduation</item>
     </string-array>
     <string-array name="Occupation">
-        <item>Occupation</item>
+        <item>--Occupation--</item>
         <item>Agriculture</item>
         <item>Service</item>
         <item>Business</item>
         <item>Other</item>
+    </string-array>
+    <string-array name="india_states">
+        <item>--Select  Your State--</item>
+        <item>Andaman and Nicobar Islands</item>
+        <item>Andhra Pradesh</item>
+        <item>Arunachal Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chandigarh</item>
+        <item>Chhattisgarh</item>
+        <item>Dadra and Nagar Haveli</item>
+        <item>Daman and Diu</item>
+        <item>Delhi</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jammu and Kashmir</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Lakshadweep</item>
+        <item>Madhya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Orissa</item>
+        <item>Pondicherry</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Telangana</item>
+        <item>Tripura</item>
+        <item>Uttaranchal</item>
+        <item>Uttar Pradesh</item>
+        <item>West Bengal</item>
     </string-array>
 
 </resources>
