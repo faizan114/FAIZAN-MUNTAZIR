@@ -602,7 +602,7 @@ public class FarmerRegistration extends Fragment {
         }
         if(acc_yes.isChecked()==false){
 
-            Toast.makeText(getContext(),"Accept ",Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(),"Accept the Acknowledgement ",Toast.LENGTH_LONG).show();
 
             return  false;
 
@@ -634,7 +634,7 @@ public class FarmerRegistration extends Fragment {
         }
        // set dateOfBirth here
         farmerRegistration.setDateOfBirth(tvDateOfBirth.getText().toString());
-        Toast.makeText(getContext(),"Clicked",Toast.LENGTH_LONG).show();
+
 
 
 
@@ -808,33 +808,33 @@ public class FarmerRegistration extends Fragment {
 
             farmerRegistration.getCultAc().add("Lavender");
         }
-        if(lavender_A.isChecked()){
+        if(rosegrass_A.isChecked()){
 
-            farmerRegistration.getCultAc().add("Lavender");
+            farmerRegistration.getCultAc().add("Rosegrass");
         }
-        if(lavender_A.isChecked()){
+        if(salvia_sclarec_A.isChecked()){
 
-            farmerRegistration.getCultAc().add("Lavender");
+            farmerRegistration.getCultAc().add("Salvia Sclarec");
         }
-        if(lavender_A.isChecked()){
+        if(lemongrass_A.isChecked()){
 
-            farmerRegistration.getCultAc().add("Lavender");
+            farmerRegistration.getCultAc().add("lemongrass");
         }
-        if(lavender_A.isChecked()){
+        if(rosemarry_A.isChecked()){
 
-            farmerRegistration.getCultAc().add("Lavender");
+            farmerRegistration.getCultAc().add("Rosemary");
         }
-        if(lavender_A.isChecked()){
+        if(garanium_A.isChecked()){
 
-            farmerRegistration.getCultAc().add("Lavender");
+            farmerRegistration.getCultAc().add("Garanium");
         }
-        if(lavender_A.isChecked()){
+        if(ocimum_A.isChecked()){
 
-            farmerRegistration.getCultAc().add("Lavender");
+            farmerRegistration.getCultAc().add("Ocimum");
         }
-        if(lavender_A.isChecked()){
+        if(mentha_A.isChecked()){
 
-            farmerRegistration.getCultAc().add("Lavender");
+            farmerRegistration.getCultAc().add("Mentha");
         }
         if(jammu_monarda_A.isChecked()){
 
