@@ -182,7 +182,7 @@ class MainActivity : AppCompatActivity(),IMainView,NavigationView.OnNavigationIt
             val timer = Timer()
             timer.schedule(timerTask { runOnUiThread(Runnable {
                nav.navigate(R.id.farmerRegistration);
-            })}, 100)
+            })}, 200)
         }
 
         return true
