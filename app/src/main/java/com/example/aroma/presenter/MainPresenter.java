@@ -201,7 +201,7 @@ public class MainPresenter {
 
     public  void registerFarmer(FarmerRegistrationForm farmerRegistrationForm)
     {
-        rdb.getReference().child("farmerforms").child(farmerRegistrationForm.getAadhadNo()).setValue(farmerRegistrationForm);
+        rdb.getReference().child("farmerforms").child(farmerRegistrationForm.getAdhaarNo()).setValue(farmerRegistrationForm);
     }
 
 

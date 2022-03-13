@@ -236,6 +236,9 @@ public class FarmerRegistration extends Fragment {
                 if(validate())
                 {
                     getRegistrationForm();
+                    Toast.makeText(getContext(),"Form Submitted",Toast.LENGTH_LONG).show();
+
+
                 }
             }
         });
@@ -625,7 +628,7 @@ public class FarmerRegistration extends Fragment {
         farmerRegistration.setfName(father_name.getText().toString());
         farmerRegistration.setPhoneNumber(phone.getText().toString());
         farmerRegistration.setEmail(email.getText().toString());
-        farmerRegistration.setAadhadNo(aadhaar.getText().toString());
+        farmerRegistration.setAdhaarNo(aadhaar.getText().toString());
 
         if(male.isChecked()){
             farmerRegistration.setGender(true);
@@ -650,13 +653,13 @@ public class FarmerRegistration extends Fragment {
         }
 
         farmerRegistration.setEdecation((String) education.getItemAtPosition(Integer.parseInt(""+education.getSelectedItemId())));
-        farmerRegistration.setEdecation((String) occupation.getItemAtPosition(Integer.parseInt(""+occupation.getSelectedItemId())));
-        farmerRegistration.setEdecation((String) category.getItemAtPosition(Integer.parseInt(""+category.getSelectedItemId())));
+        farmerRegistration.setOccupation((String) occupation.getItemAtPosition(Integer.parseInt(""+occupation.getSelectedItemId())));
+        farmerRegistration.setCategory((String) category.getItemAtPosition(Integer.parseInt(""+category.getSelectedItemId())));
 
 
         farmerRegistration.setFamilyCount(family_count.getText().toString());
 
-        farmerRegistration.setEdecation((String) state.getItemAtPosition(Integer.parseInt(""+state.getSelectedItemId())));
+        farmerRegistration.setState((String) state.getItemAtPosition(Integer.parseInt(""+state.getSelectedItemId())));
 
         farmerRegistration.setAddress(address.getText().toString());
 
