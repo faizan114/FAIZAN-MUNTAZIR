@@ -376,7 +376,7 @@
                 <EditText
                     android:id="@+id/idETPAddress"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="70dp"
                     android:background="@drawable/edit_text_bg"
                     android:fontFamily="@font/poppins_light"
                     android:hint="@string/hintAddress"
