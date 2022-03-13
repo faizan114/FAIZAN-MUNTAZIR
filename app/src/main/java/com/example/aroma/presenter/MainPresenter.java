@@ -3,10 +3,14 @@ package com.example.aroma.presenter;
 import android.app.Activity;
 import android.content.Context;
 import androidx.annotation.NonNull;
-import com.example.aroma.User;
 import com.example.aroma.fragments.ArticleFragment;
+import com.example.aroma.fragments.FarmerRegistration;
+import com.example.aroma.fragments.Login;
 import com.example.aroma.models.Article;
 import com.example.aroma.models.Category;
+import com.example.aroma.models.FarmerRegistrationForm;
+import com.example.aroma.models.User;
+import com.example.aroma.utility.SharedPrefrences;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -33,13 +37,25 @@ public class MainPresenter {
     private final FirebaseFirestore db;
     private  final FirebaseDatabase rdb;
 
+    public  MainPresenter(IMainView view,Context context)
+    {
+        auth=FirebaseAuth.getInstance();
+        db= FirebaseFirestore.getInstance();
+        rdb=FirebaseDatabase.getInstance();
+        this.context=context;
+        this.view=view;
+    }
+
     public  MainPresenter(IMainView view)
     {
         auth=FirebaseAuth.getInstance();
         db= FirebaseFirestore.getInstance();
         rdb=FirebaseDatabase.getInstance();
+        this.context=context;
         this.view=view;
     }
+
+
 
     public MainPresenter() {
         auth=FirebaseAuth.getInstance();
@@ -61,11 +77,12 @@ public class MainPresenter {
                         if (task.isSuccessful()) {
                             getUserInformation(auth.getCurrentUser().getEmail());
 
+
                         } else {
                             //Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             //startActivity(intent);
                             // finish();
-                            view.onError("Failed to login: "+task.getException().getMessage());
+                            view.onError("Failed to login "+task.getException().getMessage());
                         }
                     }
                 });
@@ -81,6 +98,9 @@ public class MainPresenter {
                 if(task.getResult().size()>0)
                 {
                     User user=task.getResult().getDocuments().get(0).toObject(User.class);
+                   // SharedPrefrences.st
+
+                    SharedPrefrences.Companion.storeUser(context,user);
                     view.onLoginSuccesful();
                     return;
                 }
@@ -95,7 +115,7 @@ public class MainPresenter {
     //SIGN UP
     public void createUser(final User user, String password)
     {
-        auth.createUserWithEmailAndPassword(user.getEmail(), password)
+        auth.createUserWithEmailAndPassword(user.email, password)
                 .addOnCompleteListener((Activity) context, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -195,6 +215,17 @@ public class MainPresenter {
             }
         });
 
+    }
+
+
+    public  void registerFarmer(FarmerRegistrationForm farmerRegistrationForm, FarmerRegistration reg)
+    {
+        rdb.getReference().child("farmerforms").child(farmerRegistrationForm.getAdhaarNo()).setValue(farmerRegistrationForm).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                reg.onRegistrationSuccesful();
+            }
+        });
     }
 
 

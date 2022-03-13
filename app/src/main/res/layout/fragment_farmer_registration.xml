@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
+
     <include layout="@layout/toolbar"></include>
 
     <ScrollView
@@ -24,97 +22,120 @@
                 android:id="@+id/idLLDetails"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/frame_rectangle"
                 android:layout_margin="10dp"
-                android:padding="10dp"
-                android:orientation="vertical">
+                android:background="@drawable/frame_rectangle"
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <TextView
                     android:id="@+id/idTVName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/name"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/idETName"
-                    android:hint="Your Name"
-                    android:background="@drawable/edit_text_bg"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:inputType="text" />
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_bg"
+                    android:fontFamily="@font/poppins_light"
+                    android:hint="@string/hintName"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:textColorHint="@color/hintColor"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/idTVFName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/f_name"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/idETFName"
-                    android:hint="Fathers name"
-                    android:background="@drawable/edit_text_bg"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:inputType="text" />
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_bg"
+                    android:fontFamily="@font/poppins_light"
+                    android:hint="@string/hintFName"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textColorHint="@color/hintColor"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/idTVPhone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/phone"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/idETPhone"
-                    android:hint="Phone Number"
-                    android:background="@drawable/edit_text_bg"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:inputType="number"
-                    android:maxLength="10" />
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_bg"
+                    android:fontFamily="@font/poppins_light"
+                    android:hint="@string/hintPhone"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:padding="10dp"
+                    android:textColorHint="@color/hintColor"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/idTVMail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/email"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/idETMail"
-                    android:hint="something@gmail.com"
-                    android:background="@drawable/edit_text_bg"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:inputType="text" />
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_bg"
+                    android:fontFamily="@font/poppins_light"
+                    android:hint="@string/hintEmail"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textColorHint="@color/hintColor"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/idTVAadhaar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="@string/aadhaar"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/aadhar"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/idETAadhaar"
-                    android:hint="AADHAAR number"
-                    android:background="@drawable/edit_text_bg"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_bg"
+                    android:fontFamily="@font/poppins_light"
+                    android:hint="@string/hintAadhar"
                     android:inputType="number"
-                    android:maxLength="12" />
+                    android:padding="10dp"
+                    android:maxLength="12"
+                    android:textColorHint="@color/hintColor"
+                    android:textSize="16sp" />
 
 
             </LinearLayout>
@@ -126,27 +147,35 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/frame_rectangle"
                 android:orientation="horizontal"
-                android:padding="5dp">
+                android:padding="10dp">
 
                 <TextView
                     android:id="@+id/idTVGender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/gender"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
 
                 <CheckBox
                     android:id="@+id/idCBGenderM"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/male" />
+                    android:layout_margin="2dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/male"
+                    android:textSize="10sp" />
 
                 <CheckBox
                     android:id="@+id/idCBGenderF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/female" />
+                    android:layout_margin="2dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/female"
+                    android:textSize="10sp" />
 
             </LinearLayout>
 
@@ -161,113 +190,36 @@
 
                 <TextView
                     android:id="@+id/idTVAge"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/age"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/dob"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
+                <ImageView
+                    android:id="@+id/ivGetDob"
+                    android:layout_width="match_parent"
+                    android:padding="6dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/ic_baseline_calendar_today_24" />
 
-                <EditText
-                    android:id="@+id/idAge"
-                    android:hint="Age"
+
+                <TextView
+                    android:id="@+id/iddob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
                     android:background="@drawable/edit_text_bg"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:inputType="number" />
+                    android:fontFamily="@font/poppins_light"
+                    android:hint="@string/hintDOB"
+                    android:padding="6dp"
+                    android:textColorHint="@color/hintColor"
+                    android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/idTVYears"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/years"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/idLLCaste"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:background="@drawable/frame_rectangle"
-                android:orientation="horizontal"
-                android:padding="5dp">
-
-                <TextView
-                    android:id="@+id/idTVCaste"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/caste"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <CheckBox
-                    android:id="@+id/idCBGeneral"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/general" />
-
-                <CheckBox
-                    android:id="@+id/idCBObc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/obc" />
-
-                <CheckBox
-                    android:id="@+id/idCBSt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/schedule_caste" />
-
-                <CheckBox
-                    android:id="@+id/idCBOther_caste"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/other" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/idLLSpinner"
-                android:layout_width="match_parent"
-                android:background="@drawable/frame_rectangle"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <Spinner
-                    android:id="@+id/idSEducation"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/rectangle"
-                    android:entries="@array/Education"
-                    android:padding="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    tools:layout_editor_absoluteX="-13dp" />
-
-                <Spinner
-                    android:id="@+id/idSOccupation"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:scrollbarSize="20dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/rectangle"
-                    android:entries="@array/Occupation"
-                    android:padding="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    tools:layout_editor_absoluteX="-13dp" />
-
-                <Spinner
-                    android:id="@+id/idSCategory"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/rectangle"
-                    android:entries="@array/Category"
-                    android:padding="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent" />
 
 
             </LinearLayout>
@@ -277,6 +229,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:background="@drawable/frame_rectangle"
                 android:orientation="horizontal"
                 android:padding="10dp">
 
@@ -284,23 +237,80 @@
                     android:id="@+id/idTVMaritalStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:padding="6dp"
                     android:text="@string/marital_status"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
 
                 <CheckBox
                     android:id="@+id/idCBMarried"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/married" />
+                    android:layout_margin="2dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/married"
+                    android:textSize="10sp" />
 
                 <CheckBox
-                    android:id="@+id/idCBUnmarried"
+                    android:id="@+id/idCBUnMarried"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/unmarried" />
+                    android:layout_margin="2dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/unmarried"
+                    android:textSize="10sp" />
+
 
             </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/idLLSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/frame_rectangle"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <Spinner
+                    android:id="@+id/idSEducation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rectangle"
+                    android:entries="@array/Education"
+                    android:fontFamily="@font/poppins_light"
+                    android:padding="8dp"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/idSOccupation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rectangle"
+                    android:entries="@array/Occupation"
+                    android:fontFamily="@font/poppins_light"
+                    android:padding="8dp"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/idSCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rectangle"
+                    android:entries="@array/Category"
+                    android:fontFamily="@font/poppins_light"
+                    android:padding="8dp"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
 
             <LinearLayout
                 android:id="@+id/idLLFamilyCount"
@@ -313,127 +323,71 @@
 
                 <TextView
                     android:id="@+id/idTVFamilyCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="45dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/family_count"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
 
                 <EditText
                     android:id="@+id/idETFamilyCount"
-                    android:background="@drawable/edit_text_bg"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/edit_text_bg"
+                    android:fontFamily="@font/poppins_light"
+                    android:inputType="number"
+                    android:padding="6dp"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/idLLAddress"
                 android:layout_width="match_parent"
-                android:layout_margin="10dp"
-                android:padding="10dp"
-                android:background="@drawable/frame_rectangle"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_margin="10dp"
+                android:background="@drawable/frame_rectangle"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <Spinner
+                    android:id="@+id/idSState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rectangle"
+                    android:entries="@array/india_states"
+                    android:fontFamily="@font/poppins_light"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
+
                 <TextView
                     android:id="@+id/idTVPAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/c_address"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
 
                 <EditText
                     android:id="@+id/idETPAddress"
-                    android:hint="Address"
-                    android:background="@drawable/edit_text_bg"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:inputType="text" />
+                    android:background="@drawable/edit_text_bg"
+                    android:fontFamily="@font/poppins_light"
+                    android:hint="@string/hintAddress"
+                    android:inputType="text"
+                    android:maxLines="2"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
 
 
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/idLLAddress2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:padding="10dp"
-                android:background="@drawable/frame_rectangle"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/idTVTownVillage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/village_town"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/idETTownVillage"
-                    android:hint="Locality"
-                    android:layout_width="match_parent"
-                    android:background="@drawable/edit_text_bg"
-                    android:layout_height="40dp"
-                    android:inputType="text"
-                    android:maxLength="10" />
-                <TextView
-                    android:id="@+id/idTVPost"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/post"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/idETPost"
-                    android:hint="PIN Code"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:inputType="number"
-                    android:maxLength="10" />
-                <TextView
-                    android:id="@+id/idTVDistrict"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/distt"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/idETDistrict"
-                    android:hint="District"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:inputType="text"
-                    android:maxLength="10" />
-                <TextView
-                    android:id="@+id/idTVState"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edit_text_bg"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/state"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/idETState"
-                    android:hint="State"
-                    android:background="@drawable/edit_text_bg"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:inputType="text"
-                    android:maxLength="10" />
-
-
-            </LinearLayout>
             <LinearLayout
                 android:id="@+id/idLLElectricity"
                 android:layout_width="match_parent"
@@ -447,24 +401,28 @@
                     android:id="@+id/idTVElectricity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/electricity_avl"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
 
                 <CheckBox
                     android:id="@+id/idCBElectricityYes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/yes" />
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/yes"
+                    android:textSize="10sp" />
 
                 <CheckBox
                     android:id="@+id/idCBElectricityNo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/no" />
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/no"
+                    android:textSize="10sp" />
 
             </LinearLayout>
-
 
 
             <LinearLayout
@@ -472,232 +430,311 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:padding="10dp"
                 android:background="@drawable/frame_rectangle"
                 android:orientation="vertical"
-                >
+                android:padding="10dp">
+
                 <TextView
                     android:id="@+id/idTVMachinery"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/farm_machinery"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
+
                 <CheckBox
                     android:id="@+id/idCBSTractor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tractor" />
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/tractor"
+                    android:textSize="10sp" />
+
                 <CheckBox
                     android:id="@+id/idCBHarvester"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/harvester" />
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/harvester"
+                    android:textSize="10sp" />
+
                 <CheckBox
                     android:id="@+id/idCBRotavator"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/rotavator" />
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/rotavator"
+                    android:textSize="10sp" />
+
                 <CheckBox
                     android:id="@+id/idCBTubewellM"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tubewell" />
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/tubewell"
+                    android:textSize="10sp" />
 
                 <CheckBox
                     android:id="@+id/idCBMachine_none"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/none" />
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/none"
+                    android:textSize="10sp" />
+
                 <TextView
                     android:id="@+id/idTVMachineryOther"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/other"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="10sp" />
 
                 <EditText
                     android:id="@+id/idETMachineryOther"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_bg"
-                    android:layout_height="40dp"
-                    />
+                    android:fontFamily="@font/poppins_light"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/idLLIncome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:padding="10dp"
                 android:background="@drawable/frame_rectangle"
                 android:orientation="vertical"
-                >
+                android:padding="10dp">
+
                 <LinearLayout
                     android:id="@+id/idLLTotalLand"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/idTVTotalLandArea"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/poppins_light"
                         android:text="@string/t_land_area"
+                        android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="15sp" />
+                        android:textSize="14sp" />
 
                     <EditText
                         android:id="@+id/idETTotalLandArea"
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
                         android:background="@drawable/edit_text_bg"
-                        android:layout_height="40dp"
+                        android:fontFamily="@font/poppins_light"
                         android:inputType="number"
-                        />
+                        android:padding="8dp"
+                        android:textSize="12sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/idLLTotalAIncome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/idTVTotalAgriIncome"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/poppins_light"
                         android:text="@string/t_annual_income"
+                        android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="15sp" />
+                        android:textSize="14sp" />
 
                     <EditText
                         android:id="@+id/idETTotalAgriIncome"
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
                         android:background="@drawable/edit_text_bg"
-                        android:layout_height="40dp"
-                        android:inputType="text"
-                        />
+                        android:fontFamily="@font/poppins_light"
+                        android:inputType="number"
+                        android:padding="8dp"
+                        android:textSize="12sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/idLLTotalCIncome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/idTVTotalCropIncome"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/poppins_light"
                         android:text="@string/annual_income_a_c"
+                        android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="15sp" />
+                        android:textSize="14sp" />
 
                     <EditText
                         android:id="@+id/idETTotalCropIncome"
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
                         android:background="@drawable/edit_text_bg"
-                        android:layout_height="40dp"
+                        android:fontFamily="@font/poppins_light"
                         android:inputType="number"
-                        />
+                        android:padding="8dp"
+                        android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/idLLFieldCondition"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:padding="10dp"
                 android:background="@drawable/frame_rectangle"
                 android:orientation="vertical"
-                >
+                android:padding="10dp">
+
                 <TextView
                     android:id="@+id/idTVFieldCondition"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/field_cond"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
+
                 <CheckBox
                     android:id="@+id/idCBSIrrigated"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/irrigated" />
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/irrigated"
+                    android:textSize="10sp" />
+
                 <CheckBox
                     android:id="@+id/idCBNonIrrigated"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/n_irr" />
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/n_irr"
+                    android:textSize="10sp" />
+
                 <CheckBox
                     android:id="@+id/idCBWasteland"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/wasteland" />
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/wasteland"
+                    android:textSize="10sp" />
+
                 <CheckBox
                     android:id="@+id/idCBDroughtAffect"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/drought_aff" />
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/drought_aff"
+                    android:textSize="10sp" />
 
                 <CheckBox
                     android:id="@+id/idCBWaterlogged"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/waterlogged" />
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/waterlogged"
+                    android:textSize="10sp" />
+
                 <TextView
                     android:id="@+id/idTVFieldConditionOther"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/other"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="12sp" />
 
                 <EditText
                     android:id="@+id/idETFieldConditionOther"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_bg"
-                    android:layout_height="40dp"
-                    />
+                    android:fontFamily="@font/poppins_light"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/idLLIrrFacility"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:padding="10dp"
                 android:background="@drawable/frame_rectangle"
                 android:orientation="vertical"
-                >
+                android:padding="10dp">
+
                 <TextView
                     android:id="@+id/idTVIrrFacility"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/irr_facility"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
+
                 <CheckBox
                     android:id="@+id/idCBTubewellI"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tubewell" />
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/tubewell"
+                    android:textSize="10sp" />
+
                 <CheckBox
                     android:id="@+id/idCBPond"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/pond" />
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/pond"
+                    android:textSize="10sp" />
+
                 <CheckBox
                     android:id="@+id/idCBCanal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/canal" />
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/canal"
+                    android:textSize="10sp" />
+
                 <CheckBox
                     android:id="@+id/idCBWell"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/well" />
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/well"
+                    android:textSize="10sp" />
+
                 <CheckBox
                     android:id="@+id/idCBRainfed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/rainfed"/>
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/rainfed"
+                    android:textSize="10sp" />
                 />
             </LinearLayout>
 
@@ -706,270 +743,350 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:padding="10dp"
                 android:background="@drawable/frame_rectangle"
                 android:orientation="vertical"
-                >
+                android:padding="10dp">
+
                 <TextView
                     android:id="@+id/idTVAromaMissionN"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/aroma_mission"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
+
                 <LinearLayout
-                    android:id="@+id/LLAM1"
+                    android:id="@+id/LLAMMain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
-                    <CheckBox
-                        android:id="@+id/idCBLavenderN"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/lavender" />
-                    <CheckBox
-                        android:id="@+id/idCBLemongrassN"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/lemongrass" />
-                    <CheckBox
-                        android:id="@+id/idCBOcimumN"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/ocimum" />
+                    android:orientation="horizontal">
 
+
+                    <LinearLayout
+                        android:id="@+id/LLAM1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/idCBLavenderN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/lavender"
+                            android:textSize="10sp" />
+
+                        <CheckBox
+                            android:id="@+id/idCBLemongrassN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/lemongrass"
+                            android:textSize="10sp" />
+
+                        <CheckBox
+                            android:id="@+id/idCBOcimumN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/ocimum"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/LLAM2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/idCBRosegrassN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/rosegrass"
+                            android:textSize="10sp" />
+
+                        <CheckBox
+                            android:id="@+id/idCBRosemaryN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/rosemary"
+                            android:textSize="10sp" />
+
+                        <CheckBox
+                            android:id="@+id/idCBMenthaN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/mentha"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/LLAM3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/idCBSalviaN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/salvia_sclarec"
+                            android:textSize="10sp" />
+
+                        <CheckBox
+                            android:id="@+id/idCBGaraniumN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/garanium"
+                            android:textSize="10sp" />
+
+                        <CheckBox
+                            android:id="@+id/idCBJammuMonardaN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/jammu_monarda"
+                            android:textSize="10sp" />
+                    </LinearLayout>
                 </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/LLAM2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
-                    <CheckBox
-                        android:id="@+id/idCBRosegrassN"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rosegrass" />
 
-                    <CheckBox
-                        android:id="@+id/idCBRosemaryN"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rosemary" />
-                    <CheckBox
-                        android:id="@+id/idCBMenthaN"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/mentha" />
-
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/LLAM3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
-                    <CheckBox
-                        android:id="@+id/idCBSalviaN"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/salvia_sclarec" />
-
-                    <CheckBox
-                        android:id="@+id/idCBGaraniumN"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/garanium" />
-                    <CheckBox
-                        android:id="@+id/idCBJammuMonardaN"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/jammu_monarda" />
-
-
-                </LinearLayout>
                 <TextView
                     android:id="@+id/idTVAroMissionOtherN"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/other"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="12sp" />
 
                 <EditText
                     android:id="@+id/idETAroMissionOtherN"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_bg"
-                    android:layout_height="40dp"
-                    />
+                    android:fontFamily="@font/poppins_light"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/idLLAromaMissionA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:padding="10dp"
                 android:background="@drawable/frame_rectangle"
                 android:orientation="vertical"
-                >
+                android:padding="10dp">
+
                 <TextView
                     android:id="@+id/idTVAromaMissionA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/aromatic_crops"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
+
                 <LinearLayout
-                    android:id="@+id/LLAM1A"
+                    android:id="@+id/LLAMMain2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
-                    <CheckBox
-                        android:id="@+id/idCBLavenderA"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/lavender" />
-                    <CheckBox
-                        android:id="@+id/idCBLemongrassA"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/lemongrass" />
-                    <CheckBox
-                        android:id="@+id/idCBOcimumA"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/ocimum" />
+                    android:orientation="horizontal">
 
+
+                    <LinearLayout
+                        android:id="@+id/LLAM1A"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/idCBLavenderA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/lavender"
+                            android:textSize="10sp" />
+
+                        <CheckBox
+                            android:id="@+id/idCBLemongrassA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/lemongrass"
+                            android:textSize="10sp" />
+
+                        <CheckBox
+                            android:id="@+id/idCBOcimumA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/ocimum"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/LLAM2A"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/idCBRosagrassA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/rosegrass"
+                            android:textSize="10sp" />
+
+                        <CheckBox
+                            android:id="@+id/idCBRosemaryA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/rosemary"
+                            android:textSize="10sp" />
+
+                        <CheckBox
+                            android:id="@+id/idCBMenthaA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/mentha"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/LLAM3A"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/idCBSalviaA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/salvia_sclarec"
+                            android:textSize="10sp" />
+
+                        <CheckBox
+                            android:id="@+id/idCBGaraniumA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/garanium"
+                            android:textSize="10sp" />
+
+                        <CheckBox
+                            android:id="@+id/idCBJammuMonardaA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/jammu_monarda"
+                            android:textSize="10sp" />
+
+
+                    </LinearLayout>
                 </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/LLAM2A"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
-                    <CheckBox
-                        android:id="@+id/idCBRosagrassA"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rosegrass" />
 
-                    <CheckBox
-                        android:id="@+id/idCBRosemaryA"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rosemary" />
-                    <CheckBox
-                        android:id="@+id/idCBMenthaA"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/mentha" />
-
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/LLAM3A"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
-                    <CheckBox
-                        android:id="@+id/idCBSalviaA"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/salvia_sclarec" />
-
-                    <CheckBox
-                        android:id="@+id/idCBGaraniumA"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/garanium" />
-                    <CheckBox
-                        android:id="@+id/idCBJammuMonardaA"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/jammu_monarda" />
-
-
-                </LinearLayout>
                 <TextView
                     android:id="@+id/idTVAroMissionOtherA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/other"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="12sp" />
 
                 <EditText
                     android:id="@+id/idETAroMissionOtherA"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_bg"
-                    android:layout_height="40dp"
-                    />
+                    android:fontFamily="@font/poppins_light"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/idLLMap"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="@drawable/rectangle"
+                android:background="@drawable/frame_rectangle"
                 android:orientation="vertical"
                 android:padding="5dp">
 
                 <TextView
                     android:id="@+id/idTVMap"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/h_l_i_map_cul"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
-                <LinearLayout
-                    android:id="@+id/idLLMap1"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/idMAPCultivation"
                     android:layout_width="match_parent"
-                    android:layout_margin="5dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
-                    <EditText
-                        android:id="@+id/idMAPCultivation"
-                        android:layout_width="60dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/edit_text_bg"
-                        android:inputType="number" />
-
-                    <TextView
-                        android:id="@+id/idTVMapYears"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/dur_years"
-                        android:textColor="@color/black"
-                        android:textSize="15dp" />
-
-
-                </LinearLayout>
-
+                    android:background="@drawable/edit_text_bg"
+                    android:fontFamily="@font/poppins_light"
+                    android:hint="@string/dur_years"
+                    android:inputType="number"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/idLLMaxprofit"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:background="@drawable/frame_rectangle"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="10dp">
 
                 <TextView
                     android:id="@+id/idTVMaxProfit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/cal_max_profit"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/idETMaxProfit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_bg"
+                    android:fontFamily="@font/poppins_light"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/idLLAgroAdvisory"
                 android:layout_width="match_parent"
@@ -983,120 +1100,153 @@
                     android:id="@+id/idTVAgroAdvisory"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/agro_advisory"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
 
                 <LinearLayout
                     android:id="@+id/LLAgroOption"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
+
                     <CheckBox
                         android:id="@+id/idCBEAgroAdvisoryYes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/yes" />
+                        android:fontFamily="@font/poppins_light"
+                        android:text="@string/yes"
+                        android:textSize="10sp" />
 
                     <CheckBox
                         android:id="@+id/idCBAgroAdvisoryNo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/no" />
+                        android:fontFamily="@font/poppins_light"
+                        android:text="@string/no"
+                        android:textSize="10sp" />
                 </LinearLayout>
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/idLLCsirThrough"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:padding="10dp"
                 android:background="@drawable/frame_rectangle"
                 android:orientation="vertical"
-                >
+                android:padding="10dp">
+
                 <TextView
                     android:id="@+id/idTVCsirThrough"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/beneficiary_csir"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:orientation="horizontal"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_height="match_parent">
+                    android:orientation="horizontal">
+
                     <LinearLayout
                         android:id="@+id/LLCsirThrough1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        >
+                        android:orientation="vertical">
+
                         <CheckBox
                             android:id="@+id/idCBPlantingMaterial"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/planting_material" />
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/planting_material"
+                            android:textSize="10sp" />
+
                         <CheckBox
                             android:id="@+id/idCBTrainningprogram"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/tranning_prog" />
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/tranning_prog"
+                            android:textSize="10sp" />
 
                         <CheckBox
                             android:id="@+id/idCBIIIMKMela"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/kissan_mela" />
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/kissan_mela"
+                            android:textSize="10sp" />
+
                         <CheckBox
                             android:id="@+id/idCBDistillationUnit"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/dist_unit" />
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/dist_unit"
+                            android:textSize="10sp" />
 
                         <CheckBox
                             android:id="@+id/idCBCsirThroughOther"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/other" />
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/other"
+                            android:textSize="10sp" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/LLCsirThrough3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
                         android:layout_weight="1"
-                        >
+                        android:orientation="vertical">
 
                         <CheckBox
                             android:id="@+id/idCBAdvisoryServices"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/advisory_services" />
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/advisory_services"
+                            android:textSize="10sp" />
+
                         <CheckBox
                             android:id="@+id/idCBRuralDev"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/rural_dev" />
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/rural_dev"
+                            android:textSize="10sp" />
+
                         <CheckBox
                             android:id="@+id/idCBFieldDemostration"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/field_demostration" />
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/field_demostration"
+                            android:textSize="10sp" />
+
                         <CheckBox
                             android:id="@+id/idCBHerbalProduct"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/herbal_product" />
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/herbal_product"
+                            android:textSize="10sp" />
 
                     </LinearLayout>
                 </LinearLayout>
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/idLLSellEssentials"
                 android:layout_width="match_parent"
@@ -1110,27 +1260,32 @@
                     android:id="@+id/idTVSellEssentials"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/sell_oils"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
+
                 <LinearLayout
                     android:id="@+id/SellEssentialsOption"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
 
                     <CheckBox
                         android:id="@+id/idCBSellEssentialsYes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/yes" />
+                        android:fontFamily="@font/poppins_light"
+                        android:text="@string/yes"
+                        android:textSize="10sp" />
 
                     <CheckBox
                         android:id="@+id/idCBSellEssentialsNo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/no" />
+                        android:fontFamily="@font/poppins_light"
+                        android:text="@string/no"
+                        android:textSize="10sp" />
 
                 </LinearLayout>
 
@@ -1149,101 +1304,167 @@
                     android:id="@+id/idTVPlantingmaterial"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/p_m_name_quantity"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
 
 
                 <LinearLayout
                     android:id="@+id/PMRequirement"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_margin="4dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/idTVPMRequirement"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_light"
                         android:text="@string/requirement"
                         android:textColor="@color/black"
-                        android:textSize="15sp" />
-                    <EditText
-                        android:id="@+id/idETPMRequirementSelp"
-                        android:layout_width="100dp"
-                        android:background="@drawable/edit_text_bg"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
+                        android:textSize="14sp" />
 
-                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/idTVPMRequirementSelp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/slips"
-                        android:textColor="@color/black"
-                        android:textSize="15sp" />
-                    <EditText
-                        android:id="@+id/idETPMRequirementkgs"
-                        android:layout_width="65dp"
-                        android:background="@drawable/edit_text_bg"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        />
-                    <TextView
-                        android:id="@+id/idTVPMRequirementKgs"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/kgs"
-                        android:textColor="@color/black"
-                        android:textSize="15sp" />
 
+                        <EditText
+                            android:id="@+id/idETPMRequirementSelp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/edit_text_bg"
+                            android:fontFamily="@font/poppins_light"
+                            android:inputType="text"
+                            android:padding="8dp"
+                            android:textSize="14sp"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/idTVPMRequirementSelp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:fontFamily="@font/poppins_light"
+                            android:padding="8dp"
+                            android:text="@string/slips"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/idETPMRequirementkgs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/edit_text_bg"
+                            android:fontFamily="@font/poppins_light"
+                            android:inputType="number"
+                            android:padding="8dp"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/idTVPMRequirementKgs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:fontFamily="@font/poppins_light"
+                            android:padding="8dp"
+                            android:text="@string/kgs"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </LinearLayout>
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/PMReceived"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_margin="4dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/idTVPMReceived"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_light"
                         android:text="@string/received"
                         android:textColor="@color/black"
-                        android:textSize="15sp" />
-                    <EditText
-                        android:id="@+id/idETPMReceivedSelp"
-                        android:layout_width="125dp"
-                        android:background="@drawable/edit_text_bg"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
+                        android:textSize="14sp" />
 
-                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/idTVPMReceivedSelp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/slips"
-                        android:textColor="@color/black"
-                        android:textSize="15sp" />
-                    <EditText
-                        android:id="@+id/idETPMReceivedKgs"
-                        android:layout_width="65dp"
-                        android:background="@drawable/edit_text_bg"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        />
-                    <TextView
-                        android:id="@+id/idTVPMReceivedKgs"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/kgs"
-                        android:textColor="@color/black"
-                        android:textSize="15sp" />
+                        <EditText
+                            android:id="@+id/idETPMReceivedSelp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/edit_text_bg"
+                            android:fontFamily="@font/poppins_light"
+                            android:inputType="text"
+                            android:padding="8dp"
+                            android:textSize="14sp"
 
+                            />
+
+                        <TextView
+                            android:id="@+id/idTVPMReceivedSelp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:fontFamily="@font/poppins_light"
+                            android:padding="8dp"
+                            android:text="@string/slips"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/idETPMReceivedKgs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/edit_text_bg"
+                            android:fontFamily="@font/poppins_light"
+                            android:inputType="number"
+                            android:padding="8dp"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/idTVPMReceivedKgs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:fontFamily="@font/poppins_light"
+                            android:inputType="number"
+                            android:padding="8dp"
+                            android:text="@string/kgs"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -1262,8 +1483,27 @@
                     android:id="@+id/idCBAcknowledge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
                     android:text="@string/acknowledgement"
-                    />
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/idLLSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/frame_rectangle"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/idBtnSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/reg_submit_form"
+                    android:textSize="18sp" />
             </LinearLayout>
 
 

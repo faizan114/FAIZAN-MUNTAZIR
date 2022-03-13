@@ -1,6 +1,6 @@
 package com.example.aroma.repository
 
-import com.example.aroma.User
+import com.example.aroma.models.User
 
 class Repository {
 
@@ -19,7 +19,7 @@ class Repository {
         }
     }
 
-    fun createUser( user:User){
+    fun createUser( user: User){
 
     }
 

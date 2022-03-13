@@ -1,43 +1,42 @@
 package com.example.aroma.fragments
 
 import android.content.Context
-import android.opengl.Visibility
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.TextSwitcher
-import androidx.core.widget.doOnTextChanged
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.aroma.R
-import com.example.aroma.User
 import com.example.aroma.adapters.CategoriesAdapter
 import com.example.aroma.models.Category
+import com.example.aroma.models.User
 import com.example.aroma.presenter.IMainView
 import com.example.aroma.presenter.MainPresenter
 import com.example.aroma.utility.SharedPrefrences
 import com.example.aroma.view.MainActivity
 import com.example.aroma.view.MainViewModel
+import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_categories.*
 import kotlinx.android.synthetic.main.toolbar.*
 import kotlinx.android.synthetic.main.toolbar.view.*
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.concurrent.timerTask
 
 
-class CategoriesFragment : Fragment(),IMainView {
+class CategoriesFragment() : BaseFragment(),IMainView, NavigationView.OnNavigationItemSelectedListener  {
         var presenter=MainPresenter(this)
        lateinit var categoriesAdapter:CategoriesAdapter
         lateinit var mainView :MainActivity
+        lateinit var  vm:MainViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,6 +62,7 @@ class CategoriesFragment : Fragment(),IMainView {
         setUpToolBar()
 
         setListeners()
+     //  message("TEST MESSAGE")
     }
 
     fun setListeners()
@@ -96,7 +96,21 @@ class CategoriesFragment : Fragment(),IMainView {
     }
   fun  initViews()
     {
+
         toolbar_title.text=getString(R.string.mint_varities)
+        vm= ViewModelProvider(this).get(MainViewModel::class.java)
+        vm.refreshLiveDataEvent.observe(viewLifecycleOwner) {
+            it
+            if (it) {
+                var nav = navHostFragment.findNavController();
+                val timer = Timer()
+                timer.schedule(timerTask {
+                    activity?.runOnUiThread(Runnable {
+                        nav.navigate(R.id.farmerRegistration);
+                    })
+                }, 100)
+            }
+        }
 
 
     }
@@ -160,5 +174,13 @@ class CategoriesFragment : Fragment(),IMainView {
         rv_cats.layoutManager=GridLayoutManager(activity,3)
 
     }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+
+
+        return  true;
+    }
+
 
 }
