@@ -77,7 +77,7 @@
     <string name="tubewell">Tubewell</string>
     <string name="none">None</string>
     <string name="t_land_area">Total Land Area (Hectare):</string>
-    <string name="t_annual_income">Total Annual Income(Agriculture ):</string>
+    <string name="t_annual_income">Available Land Area for Aromatic Crops:</string>
     <string name="annual_income_a_c">Annual Income (Aromatic Crops):</string>
     <string name="field_cond">Field Condition :</string>
     <string name="irrigated">Irrigated</string>
