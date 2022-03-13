@@ -601,6 +601,11 @@ public class FarmerRegistration extends Fragment {
             Toast.makeText(getContext(),getString(R.string.aromatic_crops),Toast.LENGTH_LONG).show();
 
             return  false;
+        }
+
+        if(sell_yes.isChecked()== false && sell_no.isChecked()== false){
+            Toast.makeText(getContext(),"Select whether You want to sell essential oils through CSIR-IIIM",Toast.LENGTH_LONG).show();
+            return  false;
 
         }
         if(acc_yes.isChecked()==false){
@@ -858,7 +863,51 @@ public class FarmerRegistration extends Fragment {
             farmerRegistration.setDoUWantAgroAdv(true);
         }else {
             farmerRegistration.setDoUWantAgroAdv(false);
+
         }
+        if(planting_materials.isChecked()){
+
+            farmerRegistration.getCsirIiimThrough().add("Planting Materials");
+        }
+        if(adv_service.isChecked()){
+
+            farmerRegistration.getCsirIiimThrough().add("Advisory Services");
+        }
+        if(traning_prog.isChecked()){
+
+            farmerRegistration.getCsirIiimThrough().add("Training Program");
+        }
+        if(rural_dev.isChecked()){
+
+            farmerRegistration.getCsirIiimThrough().add("Rural Development");
+        }
+        if(kisan_mela.isChecked()){
+
+            farmerRegistration.getCsirIiimThrough().add("IIIM Kisan Mela");
+        }
+        if(field_demo.isChecked()){
+
+            farmerRegistration.getCsirIiimThrough().add("Field Demonistration");
+        }
+        if(distillation_unit.isChecked()){
+
+            farmerRegistration.getCsirIiimThrough().add("Distillation Unit");
+        }
+        if(herbal_product.isChecked()){
+
+            farmerRegistration.getCsirIiimThrough().add("Herbal Product");
+        }
+        if(other_ben.isChecked()){
+
+            farmerRegistration.getCsirIiimThrough().add("Other");
+        }
+
+        if(sell_yes.isChecked()){
+            farmerRegistration.isSellEssOils(true);
+        }else {
+            farmerRegistration.isSellEssOils(false);
+        }
+
 
         farmerRegistration.setReqSlips(requirement.getText().toString());
         farmerRegistration.setReqKgs(requirement_qnty.getText().toString());

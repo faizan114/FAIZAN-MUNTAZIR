@@ -15,7 +15,7 @@ public class FarmerRegistrationForm {
     ArrayList<String> irrigationFacility = new ArrayList<>();
     ArrayList<String> wantCulAc = new ArrayList<>();
     ArrayList<String> cultAc = new ArrayList<>();
-    ArrayList<String> CsirIiimThrough = new ArrayList<>();
+    ArrayList<String> csirIiimThrough = new ArrayList<>();
 
 
 
@@ -191,7 +191,7 @@ public class FarmerRegistrationForm {
         this.doUWantAgroAdv = doUWantAgroAdv;
     }
 
-    public boolean isSellEssOils() {
+    public boolean isSellEssOils(boolean b) {
         return sellEssOils;
     }
 
@@ -282,11 +282,11 @@ public class FarmerRegistrationForm {
     }
 
     public ArrayList<String> getCsirIiimThrough() {
-        return CsirIiimThrough;
+        return csirIiimThrough;
     }
 
     public void setCsirIiimThrough(ArrayList<String> csirIiimThrough) {
-        CsirIiimThrough = csirIiimThrough;
+        this.csirIiimThrough = csirIiimThrough;
     }
 
 
