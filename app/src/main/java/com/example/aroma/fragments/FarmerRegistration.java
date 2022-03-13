@@ -652,7 +652,7 @@ public class FarmerRegistration extends Fragment {
             farmerRegistration.setGender(false);
         }
 
-        farmerRegistration.setEdecation((String) education.getItemAtPosition(Integer.parseInt(""+education.getSelectedItemId())));
+        farmerRegistration.setEducation((String) education.getItemAtPosition(Integer.parseInt(""+education.getSelectedItemId())));
         farmerRegistration.setOccupation((String) occupation.getItemAtPosition(Integer.parseInt(""+occupation.getSelectedItemId())));
         farmerRegistration.setCategory((String) category.getItemAtPosition(Integer.parseInt(""+category.getSelectedItemId())));
 

@@ -8,7 +8,7 @@ public class FarmerRegistrationForm {
     String reqSlips, reqKgs,recSlips,recKgs;
 
     boolean gender,maritalStatus, eleAvailable,doUWantAgroAdv,sellEssOils,declariation;
-    String edecation,occupation,category, state;
+    String education,occupation,category, state;
 
     ArrayList<String> farmMachinery = new ArrayList<>();
     ArrayList<String> fieldCondition = new ArrayList<>();
@@ -207,12 +207,12 @@ public class FarmerRegistrationForm {
         this.declariation = declariation;
     }
 
-    public String getEdecation() {
-        return edecation;
+    public String getEducation() {
+        return education;
     }
 
-    public void setEdecation(String edecation) {
-        this.edecation = edecation;
+    public void setEducation(String education) {
+        this.education = education;
     }
 
     public String getOccupation() {
