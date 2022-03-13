@@ -235,6 +235,10 @@ public class FarmerRegistrationForm {
         return state;
     }
 
+    public boolean isSellEssOils() {
+        return sellEssOils;
+    }
+
     public void setState(String state) {
         this.state = state;
     }
