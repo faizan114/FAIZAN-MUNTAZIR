@@ -1,7 +1,7 @@
 package com.example.aroma.presenter
 
-import com.example.aroma.User
 import com.example.aroma.models.Category
+import com.example.aroma.models.User
 
 interface IMainView {
     fun createUser(user: User)

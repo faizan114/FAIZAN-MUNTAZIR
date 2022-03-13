@@ -12,9 +12,9 @@ class SharedPrefrences {
          private val APP_PREF= "appPrefOne"
 
 
-         fun isUserLoggedIn():Boolean
+         fun isUserLoggedIn(con:Context):Boolean
          {
-             val sharedPreference: SharedPreferences = BaseApp.getAppContext().getSharedPreferences(APP_PREF, Context.MODE_PRIVATE)
+             val sharedPreference: SharedPreferences =con.getSharedPreferences(APP_PREF, Context.MODE_PRIVATE)
 
             val name=sharedPreference.getString("username","null")
              if(name.equals("null"))
@@ -32,9 +32,14 @@ class SharedPrefrences {
              return  language;
          }
 
-         fun storeUser(user:User)
+         fun  isHindi(con: Context):Boolean
          {
-             val preferences: SharedPreferences = BaseApp.getAppContext().getSharedPreferences(APP_PREF, Context.MODE_PRIVATE)
+           return  getUserLanguage(con).equals("hi");
+         }
+
+         fun storeUser(con:Context,user:User)
+         {
+             val preferences: SharedPreferences = con.getSharedPreferences(APP_PREF, Context.MODE_PRIVATE)
              var editor = preferences.edit()
              editor.putString("username",user.email)
              editor.commit()
@@ -50,5 +55,7 @@ class SharedPrefrences {
              editor.commit()
 
          }
+
+
      }
 }

@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.example.aroma.R;
 import com.example.aroma.models.FarmerRegistrationForm;
+import com.example.aroma.presenter.MainPresenter;
 
 import java.util.Calendar;
 
@@ -31,7 +32,7 @@ import java.util.Calendar;
  * Use the {@link FarmerRegistration#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FarmerRegistration extends Fragment {
+public class FarmerRegistration extends BaseFragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -77,7 +78,7 @@ public class FarmerRegistration extends Fragment {
     Spinner education, occupation, category, state;
 
 
-
+  MainPresenter mainPresenter;
 
     public FarmerRegistration() {
         // Required empty public constructor
@@ -115,6 +116,7 @@ public class FarmerRegistration extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_farmer_registration, container, false);
+       mainPresenter=new MainPresenter();
         name = v.findViewById(R.id.idETName);
         father_name= v.findViewById(R.id.idETFName);
         phone =v. findViewById(R.id.idETPhone);
@@ -220,7 +222,7 @@ public class FarmerRegistration extends Fragment {
         acc_yes =v.findViewById(R.id.idCBAcknowledge);
 
         submitButten = v.findViewById(R.id.idBtnSubmit);
-
+       // showProgressDialog("Submitting your information to CSIR","Please wait",false);
 
         return  v;
     }
@@ -235,7 +237,8 @@ public class FarmerRegistration extends Fragment {
             public void onClick(View v) {
                 if(validate())
                 {
-                    getRegistrationForm();
+                    showProgressDialog("Submitting your information to CSIR","Please wait",false);
+                   mainPresenter.registerFarmer(getRegistrationForm(),FarmerRegistration.this);
                     Toast.makeText(getContext(),"Form Submitted",Toast.LENGTH_LONG).show();
 
 
@@ -919,4 +922,11 @@ public class FarmerRegistration extends Fragment {
         return farmerRegistration;
     }
 
+
+    public  void onRegistrationSuccesful()
+    {
+
+        dismissDialog();
+        message("Registered Succesfully");
+    }
 }

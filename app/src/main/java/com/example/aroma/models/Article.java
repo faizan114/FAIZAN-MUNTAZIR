@@ -8,6 +8,16 @@ public class Article {
     String hindiDesciption;
     String description;
 
+    String hindiName;
+
+    public String getHindiName() {
+        return hindiName;
+    }
+
+    public void setHindiName(String hindiName) {
+        this.hindiName = hindiName;
+    }
+
     public String getHindiDesciption() {
         return hindiDesciption;
     }

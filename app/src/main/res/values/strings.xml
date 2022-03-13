@@ -123,7 +123,7 @@
     <string name="undertaking">Undertaking: I hereby abide that condition that 1/4th  area of my crop raised from my planting materials provided by CSIR-IIIM would be given back to the institution in the following years for distribution amongst other farmars.</string>
     <string name="reg_submit_form">SUBMIT</string>
 
-    //  hint Strings
+    // hint Strings
     <string name="hintName">Enter Your Name </string>
     <string name="hintFName">Enter your fathers name </string>
     <string name="hintPhone">enter Phone</string>

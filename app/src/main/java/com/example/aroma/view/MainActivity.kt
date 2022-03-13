@@ -3,15 +3,10 @@ package com.example.aroma.view
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.view.Gravity
 import android.view.MenuItem
-import android.view.View
-import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.core.view.GravityCompat
 import com.example.aroma.R
-import com.example.aroma.User
 import com.example.aroma.models.Category
 import com.example.aroma.presenter.IMainView
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -24,11 +19,8 @@ import kotlinx.android.synthetic.main.fragment_bottomsheet_language_changer.view
 import com.google.android.material.navigation.NavigationView
 
 
-import androidx.drawerlayout.widget.DrawerLayout
 import com.example.aroma.utility.SharedPrefrences
 import java.util.*
-import java.util.concurrent.Executors
-import java.util.concurrent.TimeUnit
 import kotlin.collections.ArrayList
 import kotlin.concurrent.timerTask
 import android.os.Build
@@ -38,21 +30,21 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Resources
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.example.aroma.fragments.FarmerRegistration
+import com.example.aroma.models.User
 
 
 class MainActivity : AppCompatActivity(),IMainView,NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var progressBar:ProgressBar;
+ public   lateinit var vm:MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.example.aroma.R.layout.activity_main)
 //        progressBar=findViewById(com.example.aroma.R.id.pb)
         navView.setNavigationItemSelectedListener(this);
+        vm=ViewModelProvider(this).get(MainViewModel::class.java)
 
     }
 
@@ -174,16 +166,22 @@ class MainActivity : AppCompatActivity(),IMainView,NavigationView.OnNavigationIt
             })}, 300)
         }
 
-
         if(item.itemId==R.id.nav_registra)
         {
             //  Navigation.findNavController(this,R.id.navHostFragment)
-             var nav=navHostFragment.findNavController();
+            vm.refreshLiveDataEvent.postValue(true)
+
+            var nav = navHostFragment.findNavController();
             val timer = Timer()
-            timer.schedule(timerTask { runOnUiThread(Runnable {
-               nav.navigate(R.id.farmerRegistration);
-            })}, 100)
+            timer.schedule(timerTask {
+               runOnUiThread(Runnable {
+                    nav.navigate(R.id.farmerRegistration);
+                })
+            }, 100)
         }
+
+
+
 
         return true
     }
@@ -227,6 +225,9 @@ class MainActivity : AppCompatActivity(),IMainView,NavigationView.OnNavigationIt
         this.finish()
         startActivity(Intent(this,SplashScreen::class.java))
     }
+
+
+
 
 
 

@@ -1,20 +1,20 @@
 package com.example.aroma.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebViewClient
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.aroma.R
 import com.example.aroma.models.Article
-import com.google.gson.Gson
+import com.example.aroma.utility.SharedPrefrences
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_view_article.*
 import kotlinx.android.synthetic.main.toolbar.*
-import android.webkit.WebViewClient
-
-
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -56,10 +56,14 @@ class ViewArticleFragment : Fragment() {
 
 
         toolbar_title.text=article?.name
-        if(article?.hindiDesciption?.toString()?.lowercase()?.contains("appvideo1231",true) == true  || article?.description?.toString()?.lowercase()?.contains("appvideo1231",true) == true  )
+        if(article?.category?.toString()?.lowercase()?.contains("video",true) == true  || article?.description?.toString()?.lowercase()?.contains("appvideo1231",true) == true  )
 
         {
             articleImage.visibility=View.GONE
+        }else{
+            Picasso.get().load(article?.imageUrl)
+                .into(articleImage)
+
         }
 
 
@@ -74,7 +78,21 @@ class ViewArticleFragment : Fragment() {
         // onPageFinished and override Url loading.
         webview.setWebViewClient(WebViewClient())
         Log.d("AR: ",":ARTICLE  "+article?.hindiDesciption)
-        article?.hindiDesciption?.let { webview.loadData(it,"text/html", "UTF-8") };
+        if(SharedPrefrences.isHindi(activity as Context)) {
+            toolbar_title.text=article?.hindiName
+            article?.hindiDesciption?.let { webview.loadData(it, "text/html", "UTF-8") };
+        }else{
+            toolbar_title.text=article?.name
+            article?.description?.let { webview.loadData(it, "text/html", "UTF-8") };
+        }
+
+        toolbar_backIcon.visibility=View.VISIBLE;
+        toolbar_title.text=article?.name
+
+        toolbar_backIcon.setOnClickListener {
+            (activity)?.onBackPressed()
+        }
+
     }
 
 

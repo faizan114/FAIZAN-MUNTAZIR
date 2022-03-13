@@ -1,5 +1,6 @@
 package com.example.aroma.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,12 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.aroma.R
-import com.example.aroma.User
 import com.example.aroma.models.Category
+import com.example.aroma.models.User
 import com.example.aroma.presenter.IMainView
+import com.example.aroma.presenter.MainPresenter
+import com.example.aroma.utility.SharedPrefrences
 import com.example.aroma.view.MainActivity
 import kotlinx.android.synthetic.main.fragment_login.*
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -26,11 +28,15 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Login.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Login : Fragment(),IMainView {
+class Login : BaseFragment(),IMainView {
 
-
+     lateinit var  prersenter:MainPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if(SharedPrefrences.isUserLoggedIn(activity as Context))
+        {
+            findNavController().navigate(R.id.categoriesFragment)
+        }
 
     }
 
@@ -47,36 +53,43 @@ class Login : Fragment(),IMainView {
         super.onViewCreated(view, savedInstanceState)
         signup.setOnClickListener { findNavController().navigate(R.id.register) }
         forgotpassword.setOnClickListener { findNavController().navigate(R.id.forgotPasswordFragment) }
-
+          prersenter= MainPresenter(this,activity)
         change_language.setOnClickListener {
             (activity as MainActivity).openLanguageChangeSheet()
         }
-    }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Login.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Login().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        login.setOnClickListener {
+            if(validate())
+            {
+                showProgressDialog("Logging In",false)
+                prersenter.signIn(email.text.toString(),password.text.toString())
             }
+
+
+
+        }
     }
 
-    fun setListeners()
+
+    fun  validate():Boolean
     {
+        if(email.text.isEmpty())
+        {
 
+            message("Please enter your email")
+            return  false;
+        }
+
+        if(password.text.isEmpty())
+        {
+
+            message("Please enter password")
+            return  false;
+        }
+
+        return  true;
     }
+
 
     override fun createUser(user: User) {
         TODO("Not yet implemented")
@@ -88,7 +101,8 @@ class Login : Fragment(),IMainView {
 
 
     override fun onError(msg: String) {
-        TODO("Not yet implemented")
+        dismissDialog()
+         message(msg)
     }
 
     override fun onError() {
@@ -104,7 +118,8 @@ class Login : Fragment(),IMainView {
     }
 
     override fun onLoginSuccesful() {
-        TODO("Not yet implemented")
+        dismissDialog()
+        findNavController().navigate(R.id.categoriesFragment)
     }
 
     override fun onCategoriesRetrieved(list: ArrayList<Category>) {
