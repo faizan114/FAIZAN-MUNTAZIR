@@ -175,7 +175,7 @@ class MainActivity : AppCompatActivity(),   IMainView,NavigationView.OnNavigatio
         }
 
 
-        if(item.itemId==R.id.nav_registra)
+        if(item.itemId==R.id.nav_registration)
         {
             //  Navigation.findNavController(this,R.id.navHostFragment)
              var nav=navHostFragment.findNavController();
