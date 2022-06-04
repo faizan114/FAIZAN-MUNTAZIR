@@ -3,7 +3,7 @@ package com.example.aroma.models;
 import java.util.ArrayList;
 
 public class FarmerRegistrationForm {
-    String name, fName, phoneNumber, email, adhaarNo, dateOfBirth, familyCount,address;
+    String name, fathersName, phoneNumber, email, adhaarNo, dateOfBirth, familyCount,address;
     String totalLandArea,totalAnnualIncomeAgr, AnnualIncomeAro,durationMAPsCul,acMaxProfit;
     String reqSlips, reqKgs,recSlips,recKgs;
 
@@ -31,12 +31,12 @@ public class FarmerRegistrationForm {
         this.name = name;
     }
 
-    public String getfName() {
-        return fName;
+    public String getFathersName() {
+        return fathersName;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName;
+    public void setFathersName(String fathersName) {
+        this.fathersName = fathersName;
     }
 
     public String getPhoneNumber() {

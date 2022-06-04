@@ -39,6 +39,7 @@ class CategoriesFragment : Fragment(),IMainView {
        lateinit var categoriesAdapter:CategoriesAdapter
         lateinit var mainView :MainActivity
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

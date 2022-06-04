@@ -11,28 +11,27 @@
       android:orientation="horizontal"
 
       >
+
       <ImageView
           android:id="@+id/toolbar_backIcon"
           android:layout_width="25dp"
           android:layout_height="25dp"
-          android:src="@drawable/icon_back"
-          android:layout_marginLeft="10dp"
           android:layout_centerVertical="true"
           android:layout_gravity="center_vertical"
-          >
-      </ImageView>
+          android:layout_marginLeft="10dp"
+          android:src="@drawable/icon_back"/>
+
       <TextView
           android:id="@+id/toolbar_title"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:text="TOOL BAR TTLE"
-          android:gravity="center_vertical"
           android:layout_marginLeft="20dp"
-          android:textColor="@color/white"
-          android:textSize="14sp"
           android:layout_toLeftOf="@+id/searchIcon"
           android:layout_toRightOf="@id/toolbar_backIcon"
-          />
+          android:gravity="center_vertical"
+          android:text="TOOL BAR TTLE"
+          android:textColor="@color/white"
+          android:textSize="14sp" />
       <ImageView
           android:id="@+id/searchIcon"
           android:layout_width="25dp"

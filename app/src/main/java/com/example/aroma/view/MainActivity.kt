@@ -44,7 +44,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.aroma.fragments.FarmerRegistration
 
 
-class MainActivity : AppCompatActivity(),IMainView,NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(),   IMainView,NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var progressBar:ProgressBar;
 

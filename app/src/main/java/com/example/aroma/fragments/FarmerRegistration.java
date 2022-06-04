@@ -488,7 +488,7 @@ public class FarmerRegistration extends Fragment {
         }
         if(aadhaar.getText().toString().length()!=12)
         {
-            Toast.makeText(getContext(),"Enter Valid Adhaar number",Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(),"Enter Valid Aadhaar number",Toast.LENGTH_LONG).show();
             aadhaar.requestFocus();
             return  false;
 
@@ -630,7 +630,7 @@ public class FarmerRegistration extends Fragment {
     {
         FarmerRegistrationForm farmerRegistration=new FarmerRegistrationForm();
         farmerRegistration.setName(name.getText().toString());
-        farmerRegistration.setfName(father_name.getText().toString());
+        farmerRegistration.setFathersName(father_name.getText().toString());
         farmerRegistration.setPhoneNumber(phone.getText().toString());
         farmerRegistration.setEmail(email.getText().toString());
         farmerRegistration.setAdhaarNo(aadhaar.getText().toString());
@@ -652,9 +652,9 @@ public class FarmerRegistration extends Fragment {
 
 
         if(married.isChecked()){
-            farmerRegistration.setGender(true);
+            farmerRegistration.setMaritalStatus(true);
         }else{
-            farmerRegistration.setGender(false);
+            farmerRegistration.setMaritalStatus(false);
         }
 
         farmerRegistration.setEducation((String) education.getItemAtPosition(Integer.parseInt(""+education.getSelectedItemId())));
