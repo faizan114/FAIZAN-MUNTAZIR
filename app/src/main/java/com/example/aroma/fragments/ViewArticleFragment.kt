@@ -67,6 +67,9 @@ class ViewArticleFragment : Fragment() {
 
 
         webview.setWebViewClient(WebViewClient())
+        webview.getSettings().setJavaScriptEnabled(true);
+        webview.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        webview.getSettings().setDomStorageEnabled(true);
         Log.d("AR: ",":ARTICLE  "+article?.hindiDesciption)
 
         var isHindi=SharedPrefrences.getUserLanguage(activity as Context).equals("hi",true)
@@ -75,6 +78,8 @@ class ViewArticleFragment : Fragment() {
         }else{
             article?.description?.let { webview.loadData(it, "text/html", "UTF-8") };
         }
+
+
     }
 
 
