@@ -3,18 +3,18 @@ package com.example.aroma.fragments
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebViewClient
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.aroma.R
 import com.example.aroma.models.Article
-import com.google.gson.Gson
+import com.example.aroma.utility.SharedPrefrences
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_view_article.*
 import kotlinx.android.synthetic.main.toolbar.*
-import android.webkit.WebViewClient
-import com.example.aroma.utility.SharedPrefrences
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -61,6 +61,8 @@ class ViewArticleFragment : Fragment() {
         {
            // articleImage.visibility=View.GONE
         }
+
+        Picasso.get().load(article!!.imageUrl).into(articleImage)
 
 
 
