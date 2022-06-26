@@ -23,6 +23,8 @@ import android.widget.Toast;
 
 import com.example.aroma.R;
 import com.example.aroma.models.FarmerRegistrationForm;
+import com.example.aroma.presenter.IMainView;
+import com.example.aroma.presenter.MainPresenter;
 
 import java.util.Calendar;
 
@@ -76,8 +78,7 @@ public class FarmerRegistration extends Fragment {
 
     Spinner education, occupation, category, state;
 
-
-
+    MainPresenter mainPresenter=null;
 
     public FarmerRegistration() {
         // Required empty public constructor
@@ -229,13 +230,14 @@ public class FarmerRegistration extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+       mainPresenter=new MainPresenter((IMainView) getActivity());
         submitButten.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(validate())
                 {
-                    getRegistrationForm();
+
+                     mainPresenter.registerFarmer(getRegistrationForm());
                     Toast.makeText(getContext(),"Form Submitted",Toast.LENGTH_LONG).show();
 
 

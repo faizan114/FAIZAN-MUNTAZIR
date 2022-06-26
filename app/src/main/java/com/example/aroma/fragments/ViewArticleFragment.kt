@@ -1,5 +1,6 @@
 package com.example.aroma.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -13,8 +14,7 @@ import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_view_article.*
 import kotlinx.android.synthetic.main.toolbar.*
 import android.webkit.WebViewClient
-
-
+import com.example.aroma.utility.SharedPrefrences
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -59,22 +59,20 @@ class ViewArticleFragment : Fragment() {
         if(article?.hindiDesciption?.toString()?.lowercase()?.contains("appvideo1231",true) == true  || article?.description?.toString()?.lowercase()?.contains("appvideo1231",true) == true  )
 
         {
-            articleImage.visibility=View.GONE
+           // articleImage.visibility=View.GONE
         }
 
 
-// this will enable the javascript.
-        // this will enable the javascript.
-        webview.getSettings().setJavaScriptEnabled(true)
 
-        // WebViewClient allows you to handle
-        // onPageFinished and override Url loading.
-
-        // WebViewClient allows you to handle
-        // onPageFinished and override Url loading.
         webview.setWebViewClient(WebViewClient())
         Log.d("AR: ",":ARTICLE  "+article?.hindiDesciption)
-        article?.hindiDesciption?.let { webview.loadData(it,"text/html", "UTF-8") };
+
+        var isHindi=SharedPrefrences.getUserLanguage(activity as Context).equals("hi",true)
+        if(isHindi) {
+            article?.hindiDesciption?.let { webview.loadData(it, "text/html", "UTF-8") };
+        }else{
+            article?.description?.let { webview.loadData(it, "text/html", "UTF-8") };
+        }
     }
 
 
